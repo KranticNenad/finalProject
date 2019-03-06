@@ -13,7 +13,7 @@
 
 
 
-<b><a href="">Oracle Database</a></b>
+<b><a href="https://github.com/KranticNenad/finalProject/tree/master/BackEnd/Oracle%20Database">Oracle Database</a></b>
  * <i>Oracle SQL Developer</i>
  * <i>Oracle SQL Developer - Data Modeler</i>
  * <i>Queries</i>
@@ -25,19 +25,19 @@
 
 <br>
 
-<b><a href="">Angular</a></b>
+<b><a href="https://github.com/KranticNenad/finalProject/tree/master/FrontEnd/Angular">Angular</a></b>
  * <i></i>
  * <i></i>
  * <i></i>
  * <i></i>
  
-<b><a href="">Spring</a></b>
+<b><a href="https://github.com/KranticNenad/finalProject/tree/master/BackEnd/Spring">Spring</a></b>
  * <i>Oracle SQL Developer</i>
  * <i>Oracle SQL Developer - Data Modeler</i>
  * <i>Eclipse</i>
  * <i>Spring Tools</i>
  
- <b><a href="">FrontEnd</a></b>
+ <b><a href="https://github.com/KranticNenad/finalProject/tree/master/FrontEnd/Design">Design</a></b>
  * <i>HTML</i>
  * <i>CSS</i>
  * <i>jQuery</i>
