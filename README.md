@@ -18,6 +18,12 @@
  * <i>Oracle SQL Developer - Data Modeler</i>
  * <i>Queries</i>
  * <i>Modeling Base</i>
+ 
+ <br>
+<p align="center">
+<a href=""><img width=550px href="https://github.com/KranticNenad/finalProject/tree/master/BackEnd/Oracle%20Database" src="https://github.com/ZoranKJava/gifs/blob/master/engERD.png"></a></p>
+
+<br>
 
 <b><a href="">Angular</a></b>
  * <i></i>
