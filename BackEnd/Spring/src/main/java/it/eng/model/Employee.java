@@ -7,10 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+// Object to bind to database table using JPA (Hibernate) via annotations
 @Entity
 @Table(name="employees")
 public class Employee {
 	
+	// Declaring object field employeeId as primary key for table
 	@Id
 	@Column(name="employeeid")
 	private Long employeeId;
@@ -19,12 +21,13 @@ public class Employee {
 	private Date dob;
 	private Double salary;
 	private String about;
-
+	
+	// Constructor with no arguments
 	public Employee() {
 	}
-
+	
+	// Constructor with arguments
 	public Employee(Long employeeId, String name, String surname, Date dob, Double salary, String about) {
-		super();
 		this.employeeId = employeeId;
 		this.name = name;
 		this.surname = surname;
@@ -33,12 +36,15 @@ public class Employee {
 		this.about = about;
 	}
 
+	// toString method implementation
 	@Override
 	public String toString() {
-		return "Employee [employeeId=" + employeeId + ", name=" + name + ", surname=" + surname + ", dob=" + dob
+		return "Employee [employeeId=" + employeeId + ", name=" + name + 
+				", surname=" + surname + ", dob=" + dob.getYear()
 				+ ", salary=" + salary + ", about=" + about + "]";
 	}
-
+	
+	// Getters and setters
 	public Long getEmployeeId() {
 		return employeeId;
 	}
@@ -87,6 +93,7 @@ public class Employee {
 		this.about = about;
 	}
 
+	// equlas method implementation
 	@Override
 	public boolean equals(Object obj) {
 		if(this == obj) {
