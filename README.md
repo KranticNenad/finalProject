@@ -14,11 +14,8 @@
  * <i>Queries</i>
  * <i>Modeling Base</i>
 
-<b><a href="">JPA</a></b>
- * <i>Oracle SQL Developer</i>
- * <i>Oracle SQL Developer - Data Modeler</i>
- * <i>EclipseLink</i>
-
+<b><a href="">Angular</a></b>
+ 
 <b><a href="">Spring</a></b>
  * <i>Oracle SQL Developer</i>
  * <i>Oracle SQL Developer - Data Modeler</i>
