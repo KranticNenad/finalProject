@@ -1,22 +1,42 @@
 package it.eng.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "users")
 public class User {
 
+	/* 
+	 * sets username as the primary key for user and maps
+	 * the one side of the manyToOne relationship
+	 */
+	@Id
+	@Column(name = "username")
+	@OneToMany(mappedBy = "issuedBy")
 	private String username;
-
 	private String password;
-
 	private int enabled;
-
 	private String authority;
-
 	private String email;
 
+	// constructor with no arguments
+	public User() {
+	}
+
+	// constructor with arguments
+	public User(String username, String password, int enabled, String authority, String email) {
+		this.username = username;
+		this.password = password;
+		this.enabled = enabled;
+		this.authority = authority;
+		this.email = email;
+	}
+
+	// getters and setters
 	public String getUsername() {
 		return username;
 	}
@@ -57,24 +77,7 @@ public class User {
 		this.email = email;
 	}
 
-	
-	
-	public User(String username, String password, int enabled, String authority, String email) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.enabled = enabled;
-		this.authority = authority;
-		this.email = email;
-	}
-	
-	
-
-	public User() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
+	// equals method implementation
 	@Override
 	public boolean equals(Object obj) {
 		if (obj == null) {
@@ -109,6 +112,13 @@ public class User {
 			}
 		}
 		return true;
+	}
+	
+	// toString method implementation
+	@Override
+	public String toString() {
+		return "User [username=" + username + ", password=" + password + ", enabled=" + enabled + ", authority="
+				+ authority + ", email=" + email + "]";
 	}
 
 }

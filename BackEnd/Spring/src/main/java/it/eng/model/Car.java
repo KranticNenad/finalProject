@@ -11,17 +11,22 @@ import javax.persistence.Table;
 public class Car {
 
 	/*
-	 * regno VARCHAR2(10) NOT NULL travelledkm NUMBER(8,2) NOT NULL avgfueluse
-	 * NUMBER(3,1) NOT NULL isinuse NUMBER DEFAULT 0 NOT NULL model VARCHAR2(20) NOT
-	 * NULL
+	 * regno VARCHAR2(10) NOT NULL
+	 * travelledkm NUMBER(8,2) NOT NULL
+	 * avgfueluse NUMBER(3,1) NOT NULL
+	 * isinuse NUMBER DEFAULT 0 NOT NULL 
+	 * model VARCHAR2(20) NOT NULL
 	 */
 
-	// Declaring object field regno as primary key for table
+	// Declaring object field regNo as primary key for table
 	@Id
 	@Column(name = "regno")
 	private String regNo;
+	@Column(name = "travelledkm")
 	private Double travelledKm;
+	@Column(name = "avgfueluse")
 	private Double avgFuelUse;
+	@Column(name = "isinuse")
 	private Boolean isInUse;
 	private String model;
 
