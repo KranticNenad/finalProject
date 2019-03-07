@@ -19,7 +19,7 @@ public class User {
 	@OneToMany(mappedBy = "issuedBy")
 	private String username;
 	private String password;
-	private int enabled;
+	private Boolean enabled;
 	private String authority;
 	private String email;
 
@@ -28,7 +28,7 @@ public class User {
 	}
 
 	// constructor with arguments
-	public User(String username, String password, int enabled, String authority, String email) {
+	public User(String username, String password, Boolean enabled, String authority, String email) {
 		this.username = username;
 		this.password = password;
 		this.enabled = enabled;
@@ -53,11 +53,11 @@ public class User {
 		this.password = password;
 	}
 
-	public int getEnabled() {
+	public Boolean getEnabled() {
 		return enabled;
 	}
 
-	public void setEnabled(int enabled) {
+	public void setEnabled(Boolean enabled) {
 		this.enabled = enabled;
 	}
 
@@ -87,7 +87,6 @@ public class User {
 			return true;
 		}
 		User other = (User) obj;
-
 		if (this.username == null) {
 			if (other.username != null) {
 				return false;
@@ -98,8 +97,10 @@ public class User {
 				return false;
 			}
 		}
-		if (this.enabled != other.enabled) {
-			return false;
+		if (this.enabled == null) {
+			if (other.enabled != null) {
+				return false;
+			}
 		}
 		if (this.email == null) {
 			if (other.email != null) {
@@ -110,6 +111,21 @@ public class User {
 			if (other.authority != null) {
 				return false;
 			}
+		}
+		if (this.username != other.username) {
+			return false;
+		}
+		if (this.password != other.password) {
+			return false;
+		}
+		if (this.enabled != other.enabled) {
+			return false;
+		}
+		if (this.authority != other.authority) {
+			return false;
+		}
+		if (this.email != other.email) {
+			return false;
 		}
 		return true;
 	}
