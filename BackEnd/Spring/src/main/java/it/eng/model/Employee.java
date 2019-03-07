@@ -93,7 +93,7 @@ public class Employee {
 		this.about = about;
 	}
 
-	// equlas method implementation
+	// equals method implementation
 	@Override
 	public boolean equals(Object obj) {
 		if(this == obj) {

@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "warrants")
-public class Warrants {
+public class Warrant {
 
 	/*
 	 * issuedat DATE NOT NULL, distance NUMBER(6,2) NOT NULL, users_username
@@ -70,7 +70,7 @@ public class Warrants {
 		this.cars_regno = cars_regno;
 	}
 
-	public Warrants(Date issuedat, Double distance, String users_username, Date returnedat, Double fuelused,
+	public Warrant(Date issuedat, Double distance, String users_username, Date returnedat, Double fuelused,
 			String cars_regno) {
 		super();
 		this.issuedat = issuedat;
@@ -81,7 +81,7 @@ public class Warrants {
 		this.cars_regno = cars_regno;
 	}
 
-	public Warrants() {
+	public Warrant() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
