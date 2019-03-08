@@ -21,7 +21,7 @@
   
  <br>
 <p align="center">
-<a href=""><img width=550px href="https://github.com/KranticNenad/finalProject/tree/master/BackEnd/Oracle%20Database" src="https://github.com/ZoranKJava/gifs/blob/master/ERD1.1.PNG"></a></p>
+<a href=""><img width=550px href="https://github.com/KranticNenad/finalProject/tree/master/BackEnd/Oracle%20Database" src="https://github.com/ZoranKJava/gifs/blob/master/ERD1.2.PNG"></a></p>
 
 
 
