@@ -6,7 +6,7 @@
     <session-factory>  
             
     <property name="hbm2ddl.auto">update</property>    
-        <property name="dialect">org.hibernate.dialect.Oracle12cDialect</property>    
+        <property name="dialect">org.hibernate.dialect.Oracle9Dialect</property>    
         <property name="connection.url">jdbc:oracle:thin:@localhost:1521:oracleengine</property>    
         <property name="connection.username">SYS AS SYSDBA</property>    
         <property name="connection.password">D34dn35124578</property>    
