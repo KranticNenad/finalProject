@@ -10,7 +10,6 @@
 		<config>src/main/java/it/eng/config/model-config.xml</config>
 		<config>src/main/java/it/eng/config/dao-config.xml</config>
 		<config>src/main/resources/hibernate.cfg.xml</config>
-		<config>src/main/java/it/eng/config/aop-config.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
