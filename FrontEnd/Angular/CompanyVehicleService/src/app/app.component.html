@@ -1,16 +1,16 @@
 
 
-
+<div *ngIf=false>
    <!--HEADER TOP-->
    <div class="row0">
     <div id="topbar" class="hoc clear">
       <div class="fl_left">
         <ul>
           <li>
-            <i class="fa fa-phone pointer"></i><a>(+381) 011/ 1234-567</a>
+            <i class="fa fa-phone pointer glow"></i><a>(+381) 011/ 1234-567</a>
           </li>
           <li>
-            <i class="fa fa-envelope-o pointer"></i>
+            <a href="mailto:info@robot.gmail.com"><i class="fa fa-envelope-o pointer glow"></i></a>
             <a href="mailto:info@robot.gmail.com">vehicleservice@robot.gmail.com</a>
           </li>
         </ul>
@@ -18,7 +18,7 @@
       <div class="fl_right">
         <ul>
           <li>
-            <a href="index.html"><i class="fa fa-lg fa-home"></i></a>
+            <a href="index.html"><i class="fa fa-lg fa-home glow"></i></a>
           </li>
           
           <li>
@@ -71,6 +71,25 @@
 
 <!--END FOOTER-->
 
+</div>
 
 
-<router-outlet></router-outlet>
+<!--LOGIN-->
+
+<div class="wrapper">
+    <div class="wrapped-div">
+      <div class="tab-header">
+        <h2 routerLink='/user/login' routerLinkActive='active'>Sign In</h2>
+        <h2 routerLink='/user/registration' routerLinkActive='active'>Sign Up</h2>        
+      </div>
+      <div class="row">
+        <div class="col-md-10 offset-md-1">
+            <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--END LOGIN-->
+
+  

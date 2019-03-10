@@ -21,11 +21,12 @@
  }
 
 #topbar ul li i{
-  color: #1930a5;   
+  color: #102cb9;   
+  font-size: 17px; 
 }
 
 #topbar i {
-  margin: 0 5px 0 0;  
+  margin: 0 5px 0 10px;  
 }
 /* Header
 --------------------------------------------------------------------------------------------------------------- */
@@ -172,7 +173,7 @@ nav ul, nav ol {
 }
 
 #mainav .active a, #mainav a:hover, #mainav li:hover>a {
-  color: #1930a5;
+  color: #102cb9;
   background-color: inherit;
 }
 
@@ -195,32 +196,30 @@ nav ul, nav ol {
 
 #backtotop {
   color: #ffffff;
-  background-color: rgb(0, 110, 255);
+  background-color: #006eff;
 }
 
 /* Glowing text
 --------------------------------------------------------------------------------------------------------------- */
 
-/* .glow {
+.glow {
   font-size: 80px;
   color: #fff;
   text-align: center;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
-} */
+} 
 
-/* @-webkit-keyframes glow {
+ @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #bd8e00, 0 0 40px #bd8e00, 0 0 50px #bd8e00, 0 0 60px #bd8e00, 0 0 70px #bd8e00;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #032dff, 0 0 40px #032dff, 0 0 50px #032dff, 0 0 60px #032dff, 0 0 70px #032dff;
   }
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #836302, 0 0 40px #836302, 0 0 50px #836302, 0 0 60px #836302, 0 0 70px #836302, 0 0 80px #836302;
+    text-shadow: 0 0 20px #fff, 0 0 30px #1d36b3, 0 0 40px #1d36b3, 0 0 50px #1d36b3, 0 0 60px #1d36b3, 0 0 70px #1d36b3, 0 0 80px #1d36b3;
   }
-} */
+ }
 
-/* Max Wrapper Width - Laptop, Desktop etc.
---------------------------------------------------------------------------------------------------------------- */
 
 html, body{margin:0; padding:0; font-size:24px; line-height:1.1em;}
 
@@ -239,5 +238,106 @@ html, body{margin:0; padding:0; font-size:24px; line-height:1.1em;}
 .hoc{display:block; margin:0 auto;}
 
 
+
+/* Forms
+--------------------------------------------------------------------------------------------------------------- */
+form{
+  margin: 0px 16px;  
+  font-family: 'Open Sans', sans-serif;
+}
+.imgUnder{
+  width:100%;
+  padding: 3% 10% 10% 10%;
+}
+.form-group{
+  font-size: 12px
+}
+.form-group input.invalid{
+border: 1px solid #dc3545; 
+}
+.form-group label:first-child{
+text-transform: uppercase;
+font-size: 15px;
+font-family: 'Open Sans', sans-serif;
+color: #fff;
+}
+
+input.form-control,input.form-control:focus{
+  background-color: #636b7b;
+  color: #fff;
+  border: 1px solid #636b7b;
+  font-size: 12px;  
+}
+
+input.form-control:focus{
+  box-shadow: none;
+}
+
+button[type=submit].btn{
+  border-radius: 5px;
+  background-color: #102cb9;
+  color: #fff;  
+  font-size: 15px;
+  margin-top:50px;   
+}
+
+.form-group.required>label:first-child:after{
+  content:'*';
+  color: #fff;
+  padding-left: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#toast-container > div {
+  opacity:1;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.wrapped-div {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;  
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.9);  
+}
+
+/* Tabs */
+.tab-header{
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.tab-header h2.active {
+  color: #fff;
+  border-bottom: 4px solid #fff;
+}
+
+.tab-header h2 {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  display:inline-block;
+  padding: 30px 40px 10px 40px;
+  cursor: pointer;
+  color: #545d6a;
+  border-bottom: 2px solid #545d6a;
+}
+
+.tab-header h2:focus {
+    outline: none;
+}
 
 
