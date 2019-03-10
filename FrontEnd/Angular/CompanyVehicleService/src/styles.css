@@ -263,10 +263,10 @@ color: #fff;
 }
 
 input.form-control,input.form-control:focus{
-  background-color: #636b7b;
-  color: #fff;
+  background-color: #fff;
+  color: #000;
   border: 1px solid #636b7b;
-  font-size: 12px;  
+  font-size: 17px;  
 }
 
 input.form-control:focus{

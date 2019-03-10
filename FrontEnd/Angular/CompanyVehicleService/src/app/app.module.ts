@@ -13,6 +13,11 @@ import { UserComponent } from './user/user.component';
 import { RouterModule } from '@angular/router';
 import { GuideComponent } from './guide/guide.component';
 import { RegisterComponent } from './register/register.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { LocationComponent } from './location/location.component';
+import { CarComponent } from './car/car.component';
+import { WarrantComponent } from './warrant/warrant.component';
+import { CountryComponent } from './country/country.component';
 
 
 @NgModule({
@@ -25,7 +30,12 @@ import { RegisterComponent } from './register/register.component';
     EmployeesComponent,
     UserComponent,
     GuideComponent,
-    RegisterComponent
+    RegisterComponent,
+    EmployeeComponent,
+    LocationComponent,
+    CarComponent,
+    WarrantComponent,
+    CountryComponent
     
   ],
   imports: [
