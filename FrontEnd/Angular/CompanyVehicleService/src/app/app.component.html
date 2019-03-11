@@ -1,6 +1,6 @@
 
 
-<div class="ifn" *ngIf=false>
+<div class="ifn" *ngIf=true>
    <!--HEADER TOP-->
    <div class="row0">
     <div id="topbar" class="hoc clear">
@@ -43,9 +43,9 @@
     <nav id="mainav">
       <ul class="clear">
         <li routerLinkActive="active current"><a routerLink="/home">Home</a></li>
-        <li routerLinkActive="active current"><a routerLink="/warrants">WARRANTS</a></li>
-        <li routerLinkActive="active current"><a routerLink="/cars">CARS</a></li>       
-        <li routerLinkActive="active current"><a routerLink="/employees">EMPLOYEES</a></li>
+        <li routerLinkActive="active current"><a routerLink="/warrant">WARRANTS</a></li>
+        <li routerLinkActive="active current"><a routerLink="/car">CARS</a></li>       
+        <li routerLinkActive="active current"><a routerLink="/employee">EMPLOYEES</a></li>
         <li routerLinkActive="active current"><a routerLink="/user">USERS</a></li>
         <li routerLinkActive="active current"><a routerLink="/guide">GUIDE</a></li>
       </ul>
@@ -72,24 +72,4 @@
 <!--END FOOTER-->
 
 </div>
-
-
-<!--LOGIN-->
-
-<div class="wrapper" *ngIf=true>
-    <div class="wrapped-div">
-      <div class="tab-header">
-        <h2 routerLink='/user/login' routerLinkActive='active'>Sign In</h2>
-        <h2 routerLink='/user/registration' routerLinkActive='active'>Sign Up</h2>           
-      </div>
-      <div class="row">
-        <div class="col-md-10 offset-md-1">          
-            <router-outlet></router-outlet>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!--END LOGIN-->
-
-  
+<router-outlet></router-outlet>

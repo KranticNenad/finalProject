@@ -6,46 +6,45 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./warrant.component.css']
 })
 export class WarrantComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
+
 
   private issueDate: string;
   private distance: number;
   private returnDate: string;
   private fuelUsed: number;
-   
-  constructor(issueDate: string,distance: number,returnDate:string,fuelUsed: number) {
-      this.issueDate=issueDate;
-      this.distance=distance;
-      this.returnDate=returnDate;
-      this.fuelUsed=fuelUsed;
+  constructor(issueDate: string, distance: number, returnDate: string, fuelUsed: number) {
+      this.issueDate = issueDate;
+      this.distance = distance;
+      this.returnDate = returnDate;
+      this.fuelUsed = fuelUsed;
   }
-  
   public getIssueDate(): string {
       return this.issueDate;
   }
-  public setIssueDate(issueDatearg:string) {
-      this.issueDate=issueDatearg;
+  public setIssueDate(issueDatearg: string) {
+      this.issueDate = issueDatearg;
   }
   public getDistance(): number {
       return this.distance;
   }
   public setDistance(distancearg): void {
-          this.distance=distancearg;
+          this.distance = distancearg;
   }
   public getReturnDate(): string {
       return this.returnDate;
   }
   public setReturnDate(returnDatearg): void {
-      this.returnDate=returnDatearg;
+      this.returnDate = returnDatearg;
   }
   public getFuelUsed(): number {
       return this.fuelUsed;
   }
   public setFuelUsed(fuelUsedarg): void {
-      this.fuelUsed=fuelUsedarg;
+      this.fuelUsed = fuelUsedarg;
   }
+
+  ngOnInit() {
+}
 }
 
 
