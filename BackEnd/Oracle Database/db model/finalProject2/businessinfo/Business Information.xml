@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="5947FD36-0627-9AB1-2330-BFCD2658C6CF">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-05 15:36:17 UTC</createdTime>
+<ownerDesignName>finalProject</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

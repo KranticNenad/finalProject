@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FE9A1A94-50A7-F5B9-CB6B-CC9E7280AE09" name="LOCATIONS">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>209C02AC-C980-DC8B-2EEA-B63A31110816</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="locationCode" id="46AF5EC0-8155-51A0-2AE3-ECA2F85312C0">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>9A6A1497-8D50-279D-3560-D4BE68C5C0B5</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dailyPayment" id="4EB93596-BC88-6589-CCA2-AB4F3E6896EB">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>30A7A5CC-8B6A-7C8B-28F5-019113162956</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>8</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,8,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COUNTRIES_countryCode" id="5BE7DF0B-017A-4B61-891B-02D892406D80">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>A562DB59-F259-8264-AF4D-0DD28854C208</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="134F6DDA-AEC2-6673-1763-36AD71319D46" referredColumn="7D84C0F3-E5E2-C93A-0A8F-9BA21099B26B"/>
+</associations>
+</Column>
+<Column name="name" id="0D73027C-DCFB-9709-E10F-38BB4F8624B6">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 10:41:09 UTC</createdTime>
+<generatorID>D46A1D89-6222-783A-D94F-7DB5CA7D20E2</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A83741FE-7A6A-42CE-CC15-7E8E1B764B7A" name="LOCATIONS_PK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>05BAE7AA-AD88-0E20-4923-464ADF151A6E</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46AF5EC0-8155-51A0-2AE3-ECA2F85312C0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="16C07BA1-F606-F93C-9B78-7EF547B655EB" name="LOCATIONS_COUNTRIES_FK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>FD8BFB98-6612-2261-1828-8B722184BA87</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5BE7DF0B-017A-4B61-891B-02D892406D80"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

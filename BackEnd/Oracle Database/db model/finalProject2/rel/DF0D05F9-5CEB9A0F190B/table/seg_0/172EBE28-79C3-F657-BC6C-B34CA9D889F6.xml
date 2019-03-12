@@ -1,0 +1,169 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="172EBE28-79C3-F657-BC6C-B34CA9D889F6" name="WARRANTS">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>B2BE620D-AB32-EFC7-DB52-A1D6883BDCE1</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="warrantId" id="63843533-6CD5-8332-A80A-86ECB854C969">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>D98A4B3D-600C-F752-83DF-7D12A2849DDE</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="issuedAt" id="3DD4EFD1-19EB-02DB-18DB-1596DCD98551">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>7D20F6D4-62A3-406E-AF68-9994E3E334B4</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<defaultValue>SYSDATE</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="distance" id="98B2957A-C7CA-7B34-E9F1-18922F90DC96">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>CC2DD532-1F56-14E7-4725-F0AC2276C4EF</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="returnedAt" id="308C5187-9E1D-9931-860E-9256A8E818A1">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>62C64585-6DB3-70B2-1C51-9C1E3F9F99F5</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="fuelUsed" id="BAA337B7-3306-C95A-B20A-3E9B86A783D1">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>503CAE42-6DD7-9715-97E8-2EB7E3FBDFBA</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CARS_regNo" id="46261234-1499-021A-8918-2B4B014544F4">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>D066B337-6B0E-A673-12D6-898C8B5AB8D7</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="305525DB-F60C-E981-9EC0-1ED6BF517656" referredColumn="C93E8EF4-DF2D-D89A-962D-0398AAC01EFB"/>
+</associations>
+</Column>
+<Column name="EMPLOYEES_employeeId" id="DF049B8A-0ED1-E518-CA3C-1A94396A4310">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>B8F3FA68-BCD0-435E-B306-4176B77EEB40</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>13</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="81A68C7F-BA94-3589-EC7D-19DFFE2741D1" referredColumn="EB8488AB-F85D-34FA-6FA4-CFAD740E7944"/>
+</associations>
+</Column>
+<Column name="USERS_username" id="B0F206E5-89BB-827C-5743-9A698D95850C">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>3AF1FAAE-E226-E563-9882-7428B63044E6</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="1F52AB37-BBDE-5BA0-9F6A-73C8F758500B" referredColumn="2C9CD6A6-CBE6-CE49-0CE6-44C0B1F5CAC5"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="57ACCCF4-2B14-B93E-DC3C-E050B8F0A9B3" name="WARRANTS_PK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>9A123452-3621-09C5-1EF2-5BE1936B3653</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="63843533-6CD5-8332-A80A-86ECB854C969"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="383E90D0-2BFE-FFD9-C67D-C8B5064E9A7A" name="WARRANTS_CARS_FK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>CA087285-98D9-65E1-58A4-508B4B4AE43F</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46261234-1499-021A-8918-2B4B014544F4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7E5FA0FF-3C31-92ED-6C63-B4632728C038" name="WARRANTS_EMPLOYEES_FK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>2DFA03DA-745A-0FC0-4EAC-090BDEBEC09C</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DF049B8A-0ED1-E518-CA3C-1A94396A4310"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="9DDBD44D-1346-6845-A9A6-73940D32D1F3" name="WARRANTS_USERS_FK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>2981E535-13EA-9455-9F2D-25DBA563AA1F</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0F206E5-89BB-827C-5743-9A698D95850C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

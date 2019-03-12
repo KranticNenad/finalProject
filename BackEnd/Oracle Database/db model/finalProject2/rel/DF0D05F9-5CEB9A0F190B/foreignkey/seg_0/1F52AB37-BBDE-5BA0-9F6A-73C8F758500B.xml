@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="1F52AB37-BBDE-5BA0-9F6A-73C8F758500B" containerWithKeyObject="172EBE28-79C3-F657-BC6C-B34CA9D889F6" localFKIndex="9DDBD44D-1346-6845-A9A6-73940D32D1F3" name="WARRANTS_USERS_FK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>2981E535-13EA-9455-9F2D-25DBA563AA1F</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<referredTableLongName>USERS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>DB5C5F3B-4487-AFF1-75E9-AAE56CE90734</referredTableID>
+<keyObject>5FB9D1FA-7F6F-0AB1-450F-7E41DE00F90F</keyObject>
+<referredKeyID>5FB9D1FA-7F6F-0AB1-450F-7E41DE00F90F</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>username</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

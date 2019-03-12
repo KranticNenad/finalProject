@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="Relation_14" directorySegmentName="seg_0" id="2981E535-13EA-9455-9F2D-25DBA563AA1F">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:10:40 UTC</createdTime>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<sourcePk>5AAE802A-8BFC-22C4-040F-FC07754BD6FE</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>9A838969-A775-0BB3-308B-8F86990DFBF9</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>B2BE620D-AB32-EFC7-DB52-A1D6883BDCE1</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

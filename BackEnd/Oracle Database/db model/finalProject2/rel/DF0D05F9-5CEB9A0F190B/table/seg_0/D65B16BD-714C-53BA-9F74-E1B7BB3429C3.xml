@@ -1,0 +1,80 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="D65B16BD-714C-53BA-9F74-E1B7BB3429C3" name="WAR_LOC">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>29D97A2E-81EA-7923-92A3-9DF00EC09F99</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="WARRANTS_warrantId" id="070B58E4-79BE-A4DF-AA81-6A72ECF3189E">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>2B4A99FA-F8EF-1698-541A-82BDF4171C44</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A3AE7DA3-8B92-8E7F-E85C-49C8B16513C2" referredColumn="63843533-6CD5-8332-A80A-86ECB854C969"/>
+</associations>
+</Column>
+<Column name="LOCATIONS_locationCode" id="D810D56E-589F-82E8-6879-33D38769E436">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>D9AA6FBE-86A9-5824-ABE0-156E6F8E02E6</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="053D63CB-C1B8-E4C2-B1DD-E5B78168CB00" referredColumn="46AF5EC0-8155-51A0-2AE3-ECA2F85312C0"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D80E703F-A393-F282-15DF-5E3DFFDD4B9A" name="WAR_LOC_PK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>FAC1FED1-E1C7-7F0D-3281-1CAF4658282A</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="070B58E4-79BE-A4DF-AA81-6A72ECF3189E"/>
+<colUsage columnID="D810D56E-589F-82E8-6879-33D38769E436"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1D0CFCDD-B55B-6192-5157-D89E6E2C7E7E" name="WAR_LOC_WARRANTS_FK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>919D55A5-C2DA-D22A-2E95-0AB4DCE54F9C</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="070B58E4-79BE-A4DF-AA81-6A72ECF3189E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="78FAD6FF-8FA3-FF63-BD2A-74A268316C15" name="WAR_LOC_LOCATIONS_FK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>4164EB35-1A1D-D6A5-4CFB-8DC92AB9A42F</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D810D56E-589F-82E8-6879-33D38769E436"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

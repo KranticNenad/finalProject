@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<ProcessModel class="oracle.dbtools.crest.model.design.process.ProcessModel" name="Process Model" id="63E7D994-867B-A233-F454-797AECFD4F5F">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-05 15:36:17 UTC</createdTime>
+<ownerDesignName>finalProject</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</ProcessModel>

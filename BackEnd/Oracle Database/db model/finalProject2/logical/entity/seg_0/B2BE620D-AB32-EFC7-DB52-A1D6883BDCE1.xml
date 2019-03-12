@@ -1,0 +1,145 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B2BE620D-AB32-EFC7-DB52-A1D6883BDCE1" name="WARRANTS">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-05 16:07:43 UTC</createdTime>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="warrantId" id="D98A4B3D-600C-F752-83DF-7D12A2849DDE">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-08 15:42:00 UTC</createdTime>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="issuedAt" id="7D20F6D4-62A3-406E-AF68-9994E3E334B4">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-05 16:07:58 UTC</createdTime>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<defaultValue>SYSDATE</defaultValue>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="distance" id="CC2DD532-1F56-14E7-4725-F0AC2276C4EF">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-05 16:11:41 UTC</createdTime>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,6,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="returnedAt" id="62C64585-6DB3-70B2-1C51-9C1E3F9F99F5">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-05 16:08:22 UTC</createdTime>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fuelUsed" id="503CAE42-6DD7-9715-97E8-2EB7E3FBDFBA">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-05 16:10:23 UTC</createdTime>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="regNo" id="D066B337-6B0E-A673-12D6-898C8B5AB8D7">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:10:33 UTC</createdTime>
+<generatorID>CA087285-98D9-65E1-58A4-508B4B4AE43F</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<referedAttribute>AAD11C9F-19A6-8541-5911-822A30FEA52A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="employeeId" id="B8F3FA68-BCD0-435E-B306-4176B77EEB40">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:10:36 UTC</createdTime>
+<generatorID>2DFA03DA-745A-0FC0-4EAC-090BDEBEC09C</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<referedAttribute>BD30C97B-EC69-458E-DAD1-CC7EE81D9C13</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>13</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="username" id="3AF1FAAE-E226-E563-9882-7428B63044E6">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:10:40 UTC</createdTime>
+<generatorID>2981E535-13EA-9455-9F2D-25DBA563AA1F</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<referedAttribute>4DD39805-9061-7382-07FD-D1A5CE30F14A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>16</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9A123452-3621-09C5-1EF2-5BE1936B3653" name="WARRANTS PK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:09:47 UTC</createdTime>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>D98A4B3D-600C-F752-83DF-7D12A2849DDE</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

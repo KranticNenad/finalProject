@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="053D63CB-C1B8-E4C2-B1DD-E5B78168CB00" containerWithKeyObject="D65B16BD-714C-53BA-9F74-E1B7BB3429C3" localFKIndex="78FAD6FF-8FA3-FF63-BD2A-74A268316C15" name="WAR_LOC_LOCATIONS_FK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>4164EB35-1A1D-D6A5-4CFB-8DC92AB9A42F</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<referredTableLongName>LOCATIONS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FE9A1A94-50A7-F5B9-CB6B-CC9E7280AE09</referredTableID>
+<keyObject>A83741FE-7A6A-42CE-CC15-7E8E1B764B7A</keyObject>
+<referredKeyID>A83741FE-7A6A-42CE-CC15-7E8E1B764B7A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>locationCode</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

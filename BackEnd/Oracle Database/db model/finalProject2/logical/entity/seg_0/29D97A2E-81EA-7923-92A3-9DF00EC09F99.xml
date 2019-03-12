@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="29D97A2E-81EA-7923-92A3-9DF00EC09F99" name="WAR_LOC">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:10:53 UTC</createdTime>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="warrantId" id="2B4A99FA-F8EF-1698-541A-82BDF4171C44">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:11:04 UTC</createdTime>
+<generatorID>919D55A5-C2DA-D22A-2E95-0AB4DCE54F9C</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<referedAttribute>D98A4B3D-600C-F752-83DF-7D12A2849DDE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="locationCode" id="D9AA6FBE-86A9-5824-ABE0-156E6F8E02E6">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:11:08 UTC</createdTime>
+<generatorID>4164EB35-1A1D-D6A5-4CFB-8DC92AB9A42F</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<referedAttribute>9A6A1497-8D50-279D-3560-D4BE68C5C0B5</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="FAC1FED1-E1C7-7F0D-3281-1CAF4658282A" name="WAR_LOC PK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:11:04 UTC</createdTime>
+<ownerDesignName>finalProject2</ownerDesignName>
+<engineerTo>
+<item key="DF0D05F9-E83F-746C-E62E-5CEB9A0F190B" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>2B4A99FA-F8EF-1698-541A-82BDF4171C44</attributeRef>
+<attributeRef>D9AA6FBE-86A9-5824-ABE0-156E6F8E02E6</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="81A68C7F-BA94-3589-EC7D-19DFFE2741D1" containerWithKeyObject="172EBE28-79C3-F657-BC6C-B34CA9D889F6" localFKIndex="7E5FA0FF-3C31-92ED-6C63-B4632728C038" name="WARRANTS_EMPLOYEES_FK">
+<createdBy>nenad.krantic</createdBy>
+<createdTime>2019-03-09 09:12:25 UTC</createdTime>
+<generatorID>2DFA03DA-745A-0FC0-4EAC-090BDEBEC09C</generatorID>
+<ownerDesignName>finalProject2</ownerDesignName>
+<referredTableLongName>EMPLOYEES</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3112A80A-5282-CA6E-72FE-3D4235BAFC25</referredTableID>
+<keyObject>77E28815-1F4A-6F4E-BD9E-6C8B54D31248</keyObject>
+<referredKeyID>77E28815-1F4A-6F4E-BD9E-6C8B54D31248</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>employeeId</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
