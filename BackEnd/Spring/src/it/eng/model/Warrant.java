@@ -34,7 +34,7 @@ public class Warrant {
 	@Id
 	@Column(name = "warrantid")
 	@GeneratedValue
-	private Integer warrantId;
+	private Long warrantId;
 	@Temporal(TemporalType.DATE)
 	@Column(name = "issuedat", insertable = false)
 	private Date issuedAt;
@@ -68,7 +68,7 @@ public class Warrant {
 	}
 
 	// Constructor with arguments
-	public Warrant(Integer warrantId, Date issuedAt, Double distance, Date returnedAt, Double fuelUsed, Car car,
+	public Warrant(Long warrantId, Date issuedAt, Double distance, Date returnedAt, Double fuelUsed, Car car,
 			Employee employee, User user, List<Location> locations) {
 		super();
 		this.warrantId = warrantId;
@@ -83,11 +83,11 @@ public class Warrant {
 	}
 
 	// getters and setters
-	public Integer getWarrantId() {
+	public Long getWarrantId() {
 		return warrantId;
 	}
 
-	public void setWarrantId(Integer warrantId) {
+	public void setWarrantId(Long warrantId) {
 		this.warrantId = warrantId;
 	}
 

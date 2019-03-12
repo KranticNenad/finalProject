@@ -24,5 +24,16 @@ public class CarService {
 	public void updateCar(Car car) {
 		carDao.updateCar(car);
 	}
-	//TO DO: use rest of dao methods
+	
+	public Car getCar(String regNo) {
+		return carDao.getCar(regNo);
+	}
+	public void deleteCar(Car car) {
+		carDao.deleteCar(car);
+	}
+	/*
+	 public Car searchCars(String carId) {
+		return carDao.searchCars(carId);
+	}*/
+	
 }

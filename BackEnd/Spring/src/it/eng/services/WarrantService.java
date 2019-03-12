@@ -17,4 +17,21 @@ public class WarrantService {
 	public List<Warrant> getAllWarrants(){
 		return warrantDao.getAllWarrants();
 	}
+	
+	public Warrant getWarrant(Long warrantId) {
+		return warrantDao.getWarrant(warrantId);
+	}
+	
+	public void createWarrant(Warrant warrant) {
+		warrantDao.createWarrant(warrant);
+	}
+	
+	public void updateWarrant(Warrant warrant) {
+		warrantDao.updateWarrant(warrant);
+	}
+	
+	public void deleteWarrant(Warrant warrant) {
+		warrantDao.deleteWarrant(warrant);
+	}
+	
 }

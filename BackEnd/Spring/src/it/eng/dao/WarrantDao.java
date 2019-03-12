@@ -8,7 +8,6 @@ import org.hibernate.query.Query;
 import org.springframework.stereotype.Component;
 
 import it.eng.hibernateUtil.HibernateUtil;
-import it.eng.model.Employee;
 import it.eng.model.Warrant;
 
 @Component("warrantDao")
