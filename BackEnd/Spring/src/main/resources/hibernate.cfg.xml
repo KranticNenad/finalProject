@@ -7,9 +7,9 @@
 
 		<property name="hbm2ddl.auto">update</property>
 		<property name="dialect">org.hibernate.dialect.Oracle12cDialect</property>
-		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:oracleengine</property>
+		<property name="connection.url">jdbc:oracle:thin:@localhost:1521:orcl2</property>
 		<property name="connection.username">SYS AS SYSDBA</property>
-		<property name="connection.password">D34dn35124578</property>
+		<property name="connection.password">rihardvagner</property>
 		<property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 		<property name="show_sql">true</property>
 
