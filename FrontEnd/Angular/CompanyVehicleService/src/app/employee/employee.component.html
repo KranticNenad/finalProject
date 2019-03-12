@@ -1,3 +1,6 @@
-<p>
-  employee works!
-</p>
+<p>EMPLOYEES HERE</p>
+<!-- <p>{{employee1.name}}</p> -->
+<button (click)="post()">PUSDBUTN</button>
+<ul>
+    <li *ngFor="let employee of employees">{{employee.employeeId + ' ' + employee.name}}</li>
+</ul>
