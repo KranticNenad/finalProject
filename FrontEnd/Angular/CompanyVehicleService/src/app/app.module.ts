@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -15,6 +16,7 @@ import { LocationComponent } from './location/location.component';
 import { CarComponent } from './car/car.component';
 import { WarrantComponent } from './warrant/warrant.component';
 import { CountryComponent } from './country/country.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -35,12 +37,15 @@ import { CountryComponent } from './country/country.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: 'home', component: HomepageComponent},
       {path: 'login', component: LoginComponent},
       {path: 'user', component: UserComponent},
       {path: 'guide', component: GuideComponent},
       {path: 'warrant', component: WarrantComponent},
+      {path: 'employee', component: EmployeeComponent},
+      {path: 'car', component: CarComponent},
       {path: '', component: LoginComponent},
       {path: 'registration', component: RegisterComponent}
     ])

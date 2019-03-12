@@ -12,8 +12,8 @@ import { MustMatch } from './shared/must-match.validator';
 })
 
 export class AppComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
+  ngOnInit() {
+    
   }
    
 }

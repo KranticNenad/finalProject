@@ -176,7 +176,6 @@ nav ul, nav ol {
   color: #102cb9;
   background-color: inherit;
 }
-
 #mainav li li a, #mainav .active li a {
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.6);
@@ -339,5 +338,6 @@ button[type=submit].btn{
 .tab-header h2:focus {
     outline: none;
 }
-
-
+.pointer {
+  cursor: pointer;
+}
