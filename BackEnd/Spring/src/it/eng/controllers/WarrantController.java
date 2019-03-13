@@ -41,9 +41,9 @@ public class WarrantController {
 		return new ResponseEntity<Warrant>(HttpStatus.OK);
 	}
 	
-	@PutMapping("/warrants/{warrantId}")
-	public ResponseEntity<Warrant> updateWarrant(@RequestBody Warrant warrant, @PathVariable Long warrantId){
-		Warrant foundWarrant = warrantService.getWarrant(warrantId);
+	@PutMapping("/warrants")
+	public ResponseEntity<Warrant> updateWarrant(@RequestBody Warrant warrant){
+		Warrant foundWarrant = warrantService.getWarrant(warrant.getWarrantId());
 		if(foundWarrant == null) {
 			return new ResponseEntity<Warrant>(HttpStatus.NOT_FOUND);
 		}

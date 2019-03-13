@@ -41,9 +41,9 @@ public class CountryController {
 		return new ResponseEntity<Country>(HttpStatus.OK);
 	}
 
-	@PutMapping("/countries/{countryCode}")
-	public ResponseEntity<Country> updateCountry(@RequestBody Country country, @PathVariable String countryCode) {
-		Country foundCountry = countryService.getCountry(countryCode);
+	@PutMapping("/countries")
+	public ResponseEntity<Country> updateCountry(@RequestBody Country country) {
+		Country foundCountry = countryService.getCountry(country.getCountryCode());
 		if (foundCountry == null) {
 			return new ResponseEntity<Country>(HttpStatus.NOT_FOUND);
 		}

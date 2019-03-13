@@ -2,8 +2,6 @@ package it.eng.controllers;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,9 +45,9 @@ public class EmployeeController {
 	}
 
 	
-	@PutMapping("/employees/{id}")
-	public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee, @PathVariable Long id) {
-		Employee foundEmployee = employeeService.getEmployee(id);
+	@PutMapping("/employees")
+	public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
+		Employee foundEmployee = employeeService.getEmployee(employee.getEmployeeId());
 		if (foundEmployee == null) {
 			return new ResponseEntity<Employee>(HttpStatus.NOT_FOUND);
 		}

@@ -42,8 +42,8 @@ public class UserController {
 	}
 	
 	@PutMapping("/users")
-	public ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable String username){
-		User foundUser = userService.getUser(username);
+	public ResponseEntity<User> updateUser(@RequestBody User user){
+		User foundUser = userService.getUser(user.getUsername());
 		if(foundUser == null) {
 			return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
 		}
@@ -51,7 +51,7 @@ public class UserController {
 		return new ResponseEntity<User>(HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/users")
+	@DeleteMapping("/users/{username}")
 	public ResponseEntity<User> deleteUser(@PathVariable String username){
 		User foundUser = userService.getUser(username);
 		if(foundUser == null) {

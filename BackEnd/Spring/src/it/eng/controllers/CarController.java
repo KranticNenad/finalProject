@@ -41,9 +41,9 @@ public class CarController {
 		return new ResponseEntity<Car>(HttpStatus.OK);
 	}
 	
-	@PutMapping("/cars/{carId}")
-	public ResponseEntity<Car> updateCar (@RequestBody Car car, @PathVariable String carId){
-		Car foundCar = carService.getCar(carId);
+	@PutMapping("/cars")
+	public ResponseEntity<Car> updateCar (@RequestBody Car car){
+		Car foundCar = carService.getCar(car.getRegNo());
 		if(foundCar == null) {
 			return new ResponseEntity<Car>(HttpStatus.NOT_FOUND);
 		}

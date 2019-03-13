@@ -41,9 +41,9 @@ public class LocationController {
 		return new ResponseEntity<Location>(HttpStatus.OK);
 	}
 	
-	@PutMapping("locations/{locationCode}")
-	public ResponseEntity<Location> updateLocation(@RequestBody Location location, @PathVariable String locationCode){
-		Location foundLocation = locationService.getLocation(locationCode);
+	@PutMapping("locations")
+	public ResponseEntity<Location> updateLocation(@RequestBody Location location){
+		Location foundLocation = locationService.getLocation(location.getLocationCode());
 		if(foundLocation == null) {
 			return new ResponseEntity<Location>(HttpStatus.NOT_FOUND);
 		}
