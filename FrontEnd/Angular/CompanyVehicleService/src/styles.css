@@ -49,6 +49,7 @@
 --------------------------------------------------------------------------------------------------------------- */
 body{
   background-color: grey;
+  height:1200px;
 }
 
 /* Footer
@@ -62,7 +63,10 @@ body{
   color: #fff;
   font-size: 15px;
   text-align: center;
+  margin:100px 0 0 0;
+  z-index: 999;
 }
+
 
 /* Transition Fade
 --------------------------------------------------------------------------------------------------------------- */
@@ -340,4 +344,33 @@ button[type=submit].btn{
 }
 .pointer {
   cursor: pointer;
+}
+
+
+/* TABLE */
+
+.container-table{
+  width:70%;
+  font-size: 15px;
+  margin: 25px auto;
+  float: none; 
+  
+}
+
+.btnRight{
+  font-size: 10px;
+  z-index: -999;
+}
+
+table { border-collapse: collapse; width: 100%; }
+th, td { background: #fff; padding: 8px 16px; }
+
+
+.tableFixHead {
+  overflow: auto;  
+}
+
+.tableFixHead thead th {
+  position: sticky;
+  top: 0;
 }
