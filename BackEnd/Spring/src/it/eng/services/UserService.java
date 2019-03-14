@@ -10,27 +10,43 @@ import it.eng.model.User;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	private UserDao userDao;
-	
-	public List<User> getAllUsers(){
+
+	public List<User> getAllUsers() {
 		return userDao.getAllUsers();
 	}
-	
+
 	public User getUser(String username) {
 		return userDao.getUser(username);
 	}
-	
+
 	public void createUser(User user) {
 		userDao.createUser(user);
 	}
-	
+
 	public void deleteUser(User user) {
 		userDao.deleteUser(user);
 	}
-	
+
 	public void updateUser(User user) {
 		userDao.updateUser(user);
+	}
+
+	public String loginUser(String username, String password) {
+		User user = userDao.getUser(username);
+		if(user==null) {
+			return "User does not exist!";
+		}
+		
+		else {
+		if (user.getPassword().equals(password)) {
+			return "true";
+			} 
+		else {
+				return "false";
+			}
+		}	
 	}
 }
