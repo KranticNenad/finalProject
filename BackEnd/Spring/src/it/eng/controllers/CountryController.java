@@ -47,7 +47,7 @@ public class CountryController {
 		if (foundCountry == null) {
 			return new ResponseEntity<Country>(HttpStatus.NOT_FOUND);
 		}
-		countryService.updateCountry(foundCountry);
+		countryService.updateCountry(country);
 		return new ResponseEntity<Country>(HttpStatus.OK);
 	}
 
