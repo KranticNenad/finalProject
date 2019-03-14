@@ -22,5 +22,13 @@ export class EmployeeService {
     return this.http.post<Employee>('http://localhost:8080/finalProject/employees/', employee);
   }
 
+  deleteEmployee(employeeId: number): Observable<{}>{
+    return this.http.delete('http://localhost:8080/finalProject/employees/'+employeeId);
+  }
+
+  putEmployee(employee: Employee): Observable<Employee>{
+    return this.http.put<Employee>('http://localhost:8080/finalProject/employees', employee);
+  }
+
 
 }
