@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { LoginService } from '../login.service';
+import { Login } from './login.interface';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -7,38 +11,44 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  ngOnInit(){
-    
+
+  title: string = 'ime';
+  username: string = '';
+  password: string = '';
+  login: Login;
+
+  constructor(private loginService: LoginService, private router: Router) {
+  }
+
+  registerForm = new FormGroup({
+    userName: new FormControl(''),
+    password: new FormControl('')
+  });
+  submitted = false;
+
+
+  ngOnInit() {
   }
 
 
-  // registerForm: FormGroup;
-  // submitted = false;
+  onSubmit() {
+    this.username = this.registerForm.get('userName').value;
+    this.password = this.registerForm.get('password').value;
+    console.log(this.username);
+    console.log(this.password);
+    console.log('http://localhost:8080/finalProject/login?username=' + this.username + '&' + 'password=' + this.password);
+    this.loginService.getStatus(this.username, this.password).subscribe(data => this.login = data);
+    setTimeout(() => {
 
-  // constructor(private formBuilder: FormBuilder) { }
+      if (this.login.status = 'true') {
+        if (this.login.auth = 'user') {
+          this.router.navigate(['/user']);
+        }
+      }
 
-  // ngOnInit() {
-  //     this.registerForm = this.formBuilder.group({
-  //         userName: ['', Validators.required],
-  //         email: ['', [Validators.required, Validators.email]],
-  //         password: ['', [Validators.required, Validators.minLength(6)]],
-  //         confirmPassword: ['', Validators.required]
-  //     }, {
-  //     });
-  // }
+    },
+      5000
+    );
 
-  // // convenience getter for easy access to form fields
-  // get f() { return this.registerForm.controls; }
-
-  // onSubmit() {
-  //     this.submitted = true;
-
-  //     // stop here if form is invalid
-  //     if (this.registerForm.invalid) {
-  //         return;
-  //     }
-
-  //     console.log('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
-  // }
-
+  }
 }

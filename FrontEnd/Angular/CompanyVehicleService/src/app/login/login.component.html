@@ -11,20 +11,24 @@
             <form [formGroup]="registerForm" class="mb-4" >
               <div class="form-group labfo">
                 <label>Username</label>
-                <input class="form-control"  name="userName"  required placeholder="Enter Username">
+                <input formControlName="userName" class="form-control"  name="userName"  required placeholder="Enter Username">
               </div>
               <div class="form-group">
                 <label>Password</label>
-                <input type="password" class="form-control"  name="password"  required placeholder="Enter Password">
+                <input formControlName="password" type="password" class="form-control"  name="password"  required placeholder="Enter Password">
               </div>
               <div class="form-row">
                 <div class="form-group col-md-8 offset-md-2">
-                  <button type="submit" class="btn btn-lg btn-block" >Login</button>
+                  <button (click)="onSubmit()" type="submit" class="btn btn-lg btn-block" >Login</button>
                 </div>
+                
               </div>
             </form>            
         </div>
       </div>
     </div>
   </div>
-  
+  <div>
+    {{registerForm.value | json}}
+    
+  </div>

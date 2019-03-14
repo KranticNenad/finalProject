@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-
-
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { UserComponent } from '../user/user.component';
+import { User } from '../user/user.interface';
+import { RegisterService } from '../register.service';
 
 @Component({
   selector: 'app-register',
@@ -10,14 +10,38 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
+  user: User= {
+    username: '',  
+    password: '', 
+    enabled: false,  
+    authority: '',  
+    email: ''
+  }
   ngOnInit() {
-    
+  }
+  
+
+  constructor(private formBuilder: FormBuilder,private registerService: RegisterService) { 
   }
 
+  registerForm = new FormGroup({
+    userName: new FormControl(''),
+    password: new FormControl(''),
+    confirmPassword: new FormControl(''),
+    email: new FormControl('')
+  });
+  onSubmit() {
+    
+    this.user.username=this.registerForm.get('userName').value;
+    this.user.email=this.registerForm.get('email').value;
+    this.user.password=this.registerForm.get('password').value;
+    this.user.enabled=true;
+    this.user.authority='user';
+    this.registerService.postUser(this.user).subscribe(user => this.user);
+    }
   // registerForm: FormGroup;
   // submitted = false;
 
-  // constructor(private formBuilder: FormBuilder) { }
 
   // ngOnInit() {
   //     this.registerForm = this.formBuilder.group({
@@ -29,7 +53,7 @@ export class RegisterComponent implements OnInit {
   //     });
   // }
 
-  // // convenience getter for easy access to form fields
+  // convenience getter for easy access to form fields
   // get f() { return this.registerForm.controls; }
 
   // onSubmit() {
@@ -42,5 +66,4 @@ export class RegisterComponent implements OnInit {
 
   //     console.log('SUCCESS!! :-)\n\n' + JSON.stringify(this.registerForm.value))
   // }
-
 }
