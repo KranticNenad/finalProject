@@ -43,190 +43,19 @@
               <td>{{employee.salary}}</td>
               <td>
                 <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                    class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal"
-                    data-target="#edit"><span class="glyphicon glyphicon-pencil"
-                      (click)="makeVisible2()"></span></button>
-                </p>
-              </td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                    class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal"
-                    data-target="#delete"><span class="glyphicon glyphicon-trash"
-                      (click)="makeVisible3()"></span></button>
-                </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td></td>
-              <td>dsdsds</td>
-              <td>sdsdsd</td>
-              <td>sdsdsdsds</td>
-              <td>sdssdsdsdsd</td>
-              <td>sdsdsdsdd</td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Edit"><button
                     class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
-                    (click)="makeVisible2()"><span class="glyphicon glyphicon-pencil"
+                    (click)="makeVisible2()" (click)="clickedOnEmployee(employee)"><span class="glyphicon glyphicon-pencil"
                       (click)="makeVisible2()"></span></button>
                 </p>
               </td>
               <td>
                 <p data-placement="top" data-toggle="tooltip" title="Delete"><button
                     class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal" data-target="#delete"
-                    (click)="makeVisible3()"><span class="glyphicon glyphicon-trash"
+                    (click)="makeVisible3()" (click)="setEmployeeDelete(employee.employeeId)"><span class="glyphicon glyphicon-trash"
                       (click)="makeVisible3()"></span></button>
                 </p>
               </td>
             </tr>
-
-            <tr>
-              <td></td>
-              <td>dsdsds</td>
-              <td>sdsdsd</td>
-              <td>sdsdsdsds</td>
-              <td>sdssdsdsdsd</td>
-              <td>sdsdsdsdd</td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                    class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
-                    (click)="makeVisible2()"><span class="glyphicon glyphicon-pencil"
-                      (click)="makeVisible2()"></span></button>
-                </p>
-              </td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                    class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal" data-target="#delete"
-                    (click)="makeVisible3()"><span class="glyphicon glyphicon-trash"
-                      (click)="makeVisible3()"></span></button>
-                </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td></td>
-              <td>dsdsds</td>
-              <td>sdsdsd</td>
-              <td>sdsdsdsds</td>
-              <td>sdssdsdsdsd</td>
-              <td>sdsdsdsdd</td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                    class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
-                    (click)="makeVisible2()"><span class="glyphicon glyphicon-pencil"
-                      (click)="makeVisible2()"></span></button>
-                </p>
-              </td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                    class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal" data-target="#delete"
-                    (click)="makeVisible3()"><span class="glyphicon glyphicon-trash"
-                      (click)="makeVisible3()"></span></button>
-                </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td></td>
-              <td>dsdsds</td>
-              <td>sdsdsd</td>
-              <td>sdsdsdsds</td>
-              <td>sdssdsdsdsd</td>
-              <td>sdsdsdsdd</td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                    class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
-                    (click)="makeVisible2()"><span class="glyphicon glyphicon-pencil"
-                      (click)="makeVisible2()"></span></button>
-                </p>
-              </td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                    class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal" data-target="#delete"
-                    (click)="makeVisible3()"><span class="glyphicon glyphicon-trash"
-                      (click)="makeVisible3()"></span></button>
-                </p>
-              </td>
-            </tr>
-
-
-            <tr>
-              <td></td>
-              <td>dsdsds</td>
-              <td>sdsdsd</td>
-              <td>sdsdsdsds</td>
-              <td>sdssdsdsdsd</td>
-              <td>sdsdsdsdd</td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                    class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
-                    (click)="makeVisible2()"><span class="glyphicon glyphicon-pencil"
-                      (click)="makeVisible2()"></span></button>
-                </p>
-              </td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                    class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal" data-target="#delete"
-                    (click)="makeVisible3()"><span class="glyphicon glyphicon-trash"
-                      (click)="makeVisible3()"></span></button>
-                </p>
-              </td>
-            </tr>
-
-            <tr>
-              <td></td>
-              <td>dsdsds</td>
-              <td>sdsdsd</td>
-              <td>sdsdsdsds</td>
-              <td>sdssdsdsdsd</td>
-              <td>sdsdsdsdd</td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                    class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
-                    (click)="makeVisible2()"><span class="glyphicon glyphicon-pencil"
-                      (click)="makeVisible2()"></span></button>
-                </p>
-              </td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                    class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal" data-target="#delete"
-                    (click)="makeVisible3()"><span class="glyphicon glyphicon-trash"
-                      (click)="makeVisible3()"></span></button>
-                </p>
-              </td>
-            </tr>
-
-
-            
-
-            <tr>
-              <td></td>
-              <td>dsdsds</td>
-              <td>sdsdsd</td>
-              <td>sdsdsdsds</td>
-              <td>sdssdsdsdsd</td>
-              <td>sdsdsdsdd</td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Edit"><button
-                    class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
-                    (click)="makeVisible2()"><span class="glyphicon glyphicon-pencil"
-                      (click)="makeVisible2()"></span></button>
-                </p>
-              </td>
-              <td>
-                <p data-placement="top" data-toggle="tooltip" title="Delete"><button
-                    class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal" data-target="#delete"
-                    (click)="makeVisible3()"><span class="glyphicon glyphicon-trash"
-                      (click)="makeVisible3()"></span></button>
-                </p>
-              </td>
-            </tr>
-
-
-            
-
-
-
           </tbody>
         </table>
       </div>
@@ -243,49 +72,49 @@
   <div class="modal2-content">
     <div class="form-row">
       <div class="col-md-4 mb-3">
-        <label for="validationServer01">ID</label>
-        <input type="text" class="form-control" id="validationServer01" placeholder="Firstname" required>
+        <label for="employeeId">ID</label>
+        <input formControlName="employeeId" type="text" class="form-control" id="employeeId" placeholder="employeeId" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter ID</p>
         </div>
       </div>
       <div class="col-md-4 mb-3">
-        <label for="validationServer02">Name</label>
-        <input type="text" class="form-control" id="validationServer02" placeholder="Lastname" required>
+        <label for="name">Name</label>
+        <input formControlName="name" type="text" class="form-control" id="name" placeholder="Name" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter Name</p>
         </div>
       </div>
       <div class="col-md-4 mb-3">
-        <label for="validationServerUsername">Lastname</label>
+        <label for="surname">Lastname</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="validationServerUsername" placeholder="Username"
+          <input formControlName="surname" type="text" class="form-control" id="surname"  placeholder="Surname"
             aria-describedby="inputGroupPrepend3" required>
           <div class="invalid-feedback" *ngIf="false">
-            <p>Please choose a Username</p>
+            <p>Please Enter Surname</p>
           </div>
         </div>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-3 mb-3">
-        <label for="validationServer03">DOB</label>
-        <input type="text" class="form-control" id="validationServer03" placeholder="City" required>
+        <label for="dob">DOB</label>
+        <input formControlName="dob" type="text" class="form-control" id="dob" placeholder="Date of Birth" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter Date Of Birth</p>
         </div>
       </div>
       <div class="col-md-3 mb-3">
-        <label for="validationServer04">Salary</label>
-        <input type="text" class="form-control" id="validationServer04" placeholder="State" required>
-        <div class="invalid-feedback" *ngIf="validate.equals(a)">
+        <label for="salary">Salary</label>
+        <input formControlName="salary" type="text" class="form-control" id="salary" placeholder="Salary" required>
+        <div class="invalid-feedback">
           <p>Please Enter Salary</p>
         </div>
       </div>
 
     </div>
 
-    <button class="btn btn-success btnAddIn">Add</button>
+    <button class="btn btn-success btnAddIn" (click)="addEmployee()">Add</button>
     <button class="btn btn-danger btnCancel" (click)="closeVisible()">Cancel</button>
   </div>
 
@@ -302,49 +131,48 @@
   <div class="modal2-content">
     <div class="form-row">
       <div class="col-md-4 mb-3">
-        <label for="validationServer01">ID</label>
-        <input type="text" class="form-control" id="validationServer01" placeholder="Firstname" required>
+        <label for="employeeId">ID</label>
+        <input type="text" formControlName="employeeId" class="form-control" id="employeeId" placeholder="EmployeeId" required>
         <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter ID</p>
+          <p>Please Enter EmployeeId</p>
         </div>
       </div>
       <div class="col-md-4 mb-3">
-        <label for="validationServer02">Name</label>
-        <input type="text" class="form-control" id="validationServer02" placeholder="Lastname" required>
+        <label for="name">Name</label>
+        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Name" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter Name</p>
         </div>
       </div>
       <div class="col-md-4 mb-3">
-        <label for="validationServerUsername">Lastname</label>
+        <label for="surname">Surname</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="validationServerUsername" placeholder="Username"
-            aria-describedby="inputGroupPrepend3" required>
+          <input type="text" formControlName="surname" class="form-control" id="surname" placeholder="Surname" required>
           <div class="invalid-feedback" *ngIf="false">
-            <p>Please choose a Username</p>
+            <p>Please Enter Surname</p>
           </div>
         </div>
       </div>
     </div>
     <div class="form-row">
       <div class="col-md-3 mb-3">
-        <label for="validationServer03">DOB</label>
-        <input type="text" class="form-control" id="validationServer03" placeholder="City" required>
+        <label for="dob">DOB</label>
+        <input type="text" formControlName="dob" class="form-control" id="dob" placeholder="Date of Birth" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter Date Of Birth</p>
         </div>
       </div>
       <div class="col-md-3 mb-3">
-        <label for="validationServer04">Salary</label>
-        <input type="text" class="form-control" id="validationServer04" placeholder="State" required>
-        <div class="invalid-feedback" *ngIf="validate.equals(a)">
+        <label for="salary">Salary</label>
+        <input type="text" formControlName="salary" class="form-control" id="salary" placeholder="Salary" required>
+        <div class="invalid-feedback">
           <p>Please Enter Salary</p>
         </div>
       </div>
 
     </div>
 
-    <button class="btn btn-success btnAddIn">Edit</button>
+    <button class="btn btn-success btnAddIn" (click)="editEmployee()">Edit</button>
     <button class="btn btn-danger btnCancel" (click)="closeVisible2()">Cancel</button>
   </div>
 
@@ -360,7 +188,7 @@
   <!-- Modal content -->
   <div class="modal3-content">
     <p>Are you sure you want to delete?</p>
-    <button class="btn btn-success btnAddIn" (click)="validateButton3()">Confirm</button>
+    <button class="btn btn-success btnAddIn" (click)="deleteEmployee()">Confirm</button>
     <button class="btn btn-danger btnCancel" (click)="closeVisible3()">Cancel</button>
   </div>
 
