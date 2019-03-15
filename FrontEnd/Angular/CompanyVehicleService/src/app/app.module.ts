@@ -6,7 +6,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { HomepageComponent } from './homepage/homepage.component';
 import { UserComponent } from './user/user.component';
 import { RouterModule } from '@angular/router';
 import { GuideComponent } from './guide/guide.component';
@@ -23,8 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    HomepageComponent,
+    LoginComponent,    
     UserComponent,
     GuideComponent,
     RegisterComponent,
@@ -41,8 +39,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     NgbModule,
     FormsModule,
-    RouterModule.forRoot([
-      {path: 'home', component: HomepageComponent},
+    RouterModule.forRoot([      
       {path: 'login', component: LoginComponent},
       {path: 'user', component: UserComponent},
       {path: 'guide', component: GuideComponent},

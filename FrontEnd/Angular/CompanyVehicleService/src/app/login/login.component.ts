@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
 
       if (this.login.status = 'true') {
         if (this.login.auth = 'user') {
-          this.router.navigate(['/user']);
+          this.router.navigate(['/car']);
         }
       }
 
