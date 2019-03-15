@@ -7,57 +7,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  // private username: string;  
-  // private password: string; 
-  // private enabled: boolean;  
-  // private authority: string;  
-  // private email: string;
-  
-
-  // constructor(username: string, password: string, enabled: boolean, authority: string, email: string) { 
-  //   this.username=username;
-  //   this.password=password;
-  //   this.enabled=enabled;
-  //   this.authority=authority;
-  //   this.email=email;
-  // }
-
-  // public getUsername(): string {
-  //   return this.username;
-  // }
-  // public setUsername(value: string) {
-  //   this.username = value;
-  // }
-
-  // public getPassword(): string {
-  //   return this.password;
-  // }
-  // public setPassword(value: string) {
-  //   this.password = value;
-  // }
-
-  // public getEnabled(): boolean {
-  //   return this.enabled;
-  // }
-  // public setEnabled(value: boolean) {
-  //   this.enabled = value;
-  // }
-
-  // public getAuthority(): string {
-  //   return this.authority;
-  // }
-  // public setAuthority(value: string) {
-  //   this.authority = value;
-  // }
-
-  // public getEmail(): string {
-  //   return this.email;
-  // }
-  // public setEmail(value: string) {
-  //   this.email = value;
-  // }
+  visible: boolean = false;
+  visible2: boolean = false;
+  visible3: boolean = false;
 
   ngOnInit() {
+  }
+
+  makeVisible(){
+    this.visible=true;
+  }
+
+  closeVisible(){
+    this.visible=false;
+  }
+
+  makeVisible2(){
+    this.visible2=true;
+  }
+
+  closeVisible2(){
+    this.visible2=false;
+  }
+
+  makeVisible3(){
+    this.visible3=true;
+  }
+
+  closeVisible3(){
+    this.visible3=false;
   }
 
 }

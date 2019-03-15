@@ -12,7 +12,9 @@ import 'jspdf-autotable';
 export class EmployeeComponent implements OnInit {
 
     visible: boolean = false;
-    validate: string = 'a';
+    visible2: boolean = false;
+    visible3: boolean = false;
+   
     
     employees: Employee[];
     employee1: Employee;
@@ -48,7 +50,7 @@ export class EmployeeComponent implements OnInit {
     ngOnInit() {
       this.employeeService.getEmployees().subscribe(data => this.employees = data);
       this.employeeService.getEmployee(34523).subscribe(data => this.employee1 = data);
-      console.log(this.validate.length);
+      
     }
 
     makeVisible(){
@@ -59,8 +61,20 @@ export class EmployeeComponent implements OnInit {
       this.visible=false;
     }
 
-    validateButton(){
-      
+    makeVisible2(){
+      this.visible2=true;
+    }
+
+    closeVisible2(){
+      this.visible2=false;
+    }
+
+    makeVisible3(){
+      this.visible3=true;
+    }
+
+    closeVisible3(){
+      this.visible3=false;
     }
     
   
