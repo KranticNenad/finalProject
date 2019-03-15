@@ -349,6 +349,22 @@ button[type=submit].btn{
 
 /* TABLE */
 
+.table {
+  width: 100%;
+  margin-bottom: -1%;
+  color: #212529;
+  background: rgb(250, 250, 250); 
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fff;
+}
+
+.table-hover tbody tr:hover {
+  color: #212529;
+  background-color: rgb(187, 182, 255);
+}
+
 .container-table{
   width:70%;
   font-size: 15px;
