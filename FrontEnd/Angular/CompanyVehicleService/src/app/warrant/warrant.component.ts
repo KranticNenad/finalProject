@@ -7,41 +7,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WarrantComponent implements OnInit {
 
+  visible: boolean = false;
+  visible2: boolean = false;
+  visible3: boolean = false;
+  visible4: boolean = false;
 
-//   private issueDate: string;
-//   private distance: number;
-//   private returnDate: string;
-//   private fuelUsed: number;
-//   constructor(issueDate: string, distance: number, returnDate: string, fuelUsed: number) {
-//       this.issueDate = issueDate;
-//       this.distance = distance;
-//       this.returnDate = returnDate;
-//       this.fuelUsed = fuelUsed;
-//   }
-//   public getIssueDate(): string {
-//       return this.issueDate;
-//   }
-//   public setIssueDate(issueDatearg: string) {
-//       this.issueDate = issueDatearg;
-//   }
-//   public getDistance(): number {
-//       return this.distance;
-//   }
-//   public setDistance(distancearg): void {
-//           this.distance = distancearg;
-//   }
-//   public getReturnDate(): string {
-//       return this.returnDate;
-//   }
-//   public setReturnDate(returnDatearg): void {
-//       this.returnDate = returnDatearg;
-//   }
-//   public getFuelUsed(): number {
-//       return this.fuelUsed;
-//   }
-//   public setFuelUsed(fuelUsedarg): void {
-//       this.fuelUsed = fuelUsedarg;
-//   }
+  makeVisible(){
+    this.visible=true;
+  }
+
+  closeVisible(){
+    this.visible=false;
+  }
+
+  makeVisible2(){
+    this.visible2=true;
+  }
+
+  closeVisible2(){
+    this.visible2=false;
+  }
+
+  makeVisible3(){
+    this.visible3=true;
+  }
+
+  closeVisible3(){
+    this.visible3=false;
+  }
+
+  makeVisible4(){
+    this.visible4=true;
+  }
+
+  closeVisible4(){
+    this.visible4=false;
+  }
+  
 
   ngOnInit() {
 }

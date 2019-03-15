@@ -236,7 +236,7 @@
 
 
 <!-- ADD MODAL -->
-
+<form [formGroup]="addForm">
 <div id="myModal" class="modal2" *ngIf="visible">
 
   <!-- Modal content -->
@@ -290,12 +290,12 @@
   </div>
 
 </div>
-
+</form>
 <!-- END ADD MODAL -->
 
 
 <!-- EDIT MODAL -->
-
+<form [formGroup]="editForm">
 <div id="myModal2" class="modal2" *ngIf="visible2">
 
   <!-- Modal content -->
@@ -349,7 +349,7 @@
   </div>
 
 </div>
-
+</form>
 <!-- END EDIT MODAL -->
 
 

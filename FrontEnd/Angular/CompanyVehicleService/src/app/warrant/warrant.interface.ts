@@ -11,7 +11,7 @@ export interface Warrant{
     returnedAt: Date;
     fuelUsed: number;
     car: Car;
-    emoployee: Employee;
+    employee: Employee;
     user: User;
     location: Location[];
 
