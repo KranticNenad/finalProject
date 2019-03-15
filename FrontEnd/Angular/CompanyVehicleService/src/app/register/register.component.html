@@ -9,7 +9,7 @@
 
         <form [formGroup]="registerForm" >
           <div class="form-group">
-            <label>First Name</label>
+            <label>User Name</label>
             <input type="text" formControlName="userName" class="form-control"
                />
             <div class="invalid-feedback">
@@ -37,9 +37,9 @@
             <label>Confirm Password</label>
             <input type="password" formControlName="confirmPassword" class="form-control"
                />
-            <div  class="invalid-feedback">
-              <div >Confirm Password is required</div>
-              <div >Passwords must match</div>
+            <div class="invalid-feedback">
+              <div>Confirm Password is required</div>
+              <div>Passwords must match</div>
             </div>
           </div>
           <div class="form-row">
@@ -52,3 +52,4 @@
     </div>
   </div>
 </div>
+<button (click)="check()"> CLICK ME</button>
