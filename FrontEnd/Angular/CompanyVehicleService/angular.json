@@ -28,7 +28,7 @@
 
               
             ],
-            "scripts": ["node_modules/jquery/dist/jquery.min.js"],
+            "scripts": [],
             "es5BrowserSupport": true
           },
           "configurations": {
