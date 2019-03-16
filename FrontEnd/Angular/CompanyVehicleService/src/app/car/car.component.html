@@ -70,44 +70,37 @@
 
   <!-- Modal content -->
   <div class="modal2-content">
-    <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="validationServer01">Registration</label>
-        <input type="text" formControlName="registration" class="form-control" id="validationServer01" placeholder="Registration" required>
-        <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter Registration</p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
+    <div class="form-row">     
+        <div class="col-md-6 mb-3">
+            <label for="validationServer01">Registration</label>
+            <input type="text" formControlName="registration" class="form-control" id="validationServer01" placeholder="Registration" required>
+            <div class="invalid-feedback" *ngIf="false">
+              <p>Please Enter Registration</p>
+            </div>
+          </div>
+      <div class="col-md-6 mb-3">
         <label for="validationServer02">TravelledKM</label>
         <input type="text" formControlName="travelledKm" class="form-control" id="validationServer02" placeholder="TravelledKM" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter TravelledKM</p>
         </div>
       </div>
-      <div class="col-md-4 mb-3">
-        <label for="validationServerUsername">AvgFuelUse</label>
-        <div class="input-group">
-          <input type="text" formControlName="avgFuelUse" class="form-control" id="validationServerUsername" placeholder="AvgFuelUse"
-            aria-describedby="inputGroupPrepend3" required>
+      <div class="col-md-6 mb-3">
+        <label for="validationServerUsername">AvgFuelUse</label>      
+          <input type="text" formControlName="avgFuelUse" class="form-control" id="validationServerUsername" placeholder="AvgFuelUse" required>
           <div class="invalid-feedback" *ngIf="false">
             <p>Please choose avgFuelUse</p>
-          </div>
-        </div>
+          </div>        
       </div>
-    </div>
-    <div class="form-row">
-      <div class="col-md-3 mb-3">
+      <div class="col-md-6 mb-3">
         <label for="validationServer03">Model</label>
         <input type="text" formControlName="model" class="form-control" id="validationServer03" placeholder="Model" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter a Model</p>
         </div>
-      </div>
-      
-
-    </div>
-
+      </div>      
+    </div>  
+    
     <button (click)="addCar()" class="btn btn-success btnAddIn">Add</button>
     <button class="btn btn-danger btnCancel" (click)="closeVisible()">Cancel</button>
   </div>
@@ -122,14 +115,7 @@
 <div id="myModal2" class="modal2" *ngIf="visible2">
   <!-- Modal content -->
   <div class="modal2-content">
-    <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="validationServer01">Registration</label>
-        <input formControlName="registration" type="text" class="form-control" id="validationServer01" placeholder="Registration" required>
-        <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter Registration</p>
-        </div>
-      </div>
+    <div class="form-row">      
       <div class="col-md-4 mb-3">
         <label for="validationServer02">TravelledKM</label>
         <input type="text" formControlName="travelledKm" class="form-control" id="validationServer02" placeholder="TravelledKM" required>
@@ -138,25 +124,21 @@
         </div>
       </div>
       <div class="col-md-4 mb-3">
-        <label for="validationServerUsername">avgFuelUse</label>
-        <div class="input-group">
-          <input type="text" formControlName="avgFuelUse" class="form-control" id="validationServerUsername" placeholder="avgFuelUse"
+        <label for="validationServerUsername">AvgFuelUse</label>        
+          <input type="text" formControlName="avgFuelUse" class="form-control" id="validationServerUsername" placeholder="AvgFuelUse"
             aria-describedby="inputGroupPrepend3" required>
           <div class="invalid-feedback" *ngIf="false">
             <p>Please choose avgFuelUse</p>
-          </div>
-        </div>
+          </div>        
       </div>
-    </div>
-    <div class="form-row">
-      <div class="col-md-3 mb-3">
+      <div class="col-md-4 mb-3">
         <label for="validationServer03">Model</label>
         <input type="text" formControlName="model" class="form-control" id="validationServer03" placeholder="model" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter a Model</p>
         </div>
       </div>
-    </div>
+    </div>    
 
     <button class="btn btn-success btnAddIn" (click)="editCarFormMethod()" >Edit</button>
     <button class="btn btn-danger btnCancel" (click)="closeVisible2()">Cancel</button>

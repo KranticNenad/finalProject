@@ -56,6 +56,7 @@
                 </p>
               </td>
             </tr>
+
           </tbody>
         </table>
       </div>
@@ -86,25 +87,23 @@
         </div>
       </div>
       <div class="col-md-4 mb-3">
-        <label for="surname">Lastname</label>
-        <div class="input-group">
+        <label for="surname">Lastname</label>        
           <input formControlName="surname" type="text" class="form-control" id="surname"  placeholder="Surname"
             aria-describedby="inputGroupPrepend3" required>
           <div class="invalid-feedback" *ngIf="false">
             <p>Please Enter Surname</p>
-          </div>
-        </div>
+          </div>        
       </div>
     </div>
     <div class="form-row">
-      <div class="col-md-3 mb-3">
+      <div class="col-md-6 mb-3">
         <label for="dob">DOB</label>
         <input formControlName="dob" type="text" class="form-control" id="dob" placeholder="Date of Birth" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter Date Of Birth</p>
         </div>
       </div>
-      <div class="col-md-3 mb-3">
+      <div class="col-md-6 mb-3">
         <label for="salary">Salary</label>
         <input formControlName="salary" type="text" class="form-control" id="salary" placeholder="Salary" required>
         <div class="invalid-feedback">
@@ -155,14 +154,14 @@
       </div>
     </div>
     <div class="form-row">
-      <div class="col-md-3 mb-3">
+      <div class="col-md-6 mb-3">
         <label for="dob">DOB</label>
         <input type="text" formControlName="dob" class="form-control" id="dob" placeholder="Date of Birth" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter Date Of Birth</p>
         </div>
       </div>
-      <div class="col-md-3 mb-3">
+      <div class="col-md-6 mb-3">
         <label for="salary">Salary</label>
         <input type="text" formControlName="salary" class="form-control" id="salary" placeholder="Salary" required>
         <div class="invalid-feedback">
