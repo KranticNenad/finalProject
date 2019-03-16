@@ -18,6 +18,21 @@ export class EmployeeComponent implements OnInit {
     visible: boolean = false;
     visible2: boolean = false;
     visible3: boolean = false;
+    searchVar: string='';
+
+  public search(arg): void {
+    this.searchVar=arg.target.value;
+}
+
+public show(arg:any): boolean {
+ 
+  if(this.searchVar =='' || arg.name.startsWith(this.searchVar) ) {
+    return true;
+  }
+  else {
+  return false;     
+}
+}
    
     employees: Employee[];
     employeeToDelete: number;

@@ -15,6 +15,21 @@ export class CarComponent implements OnInit {
   visible2: boolean = false;
   visible3: boolean = false;
   argument: any='';
+  searchVar: string='';
+
+  public search(arg): void {
+    this.searchVar=arg.target.value;
+}
+
+public show(arg:any): boolean {
+ 
+  if(this.searchVar =='' || arg.regNo.startsWith(this.searchVar) ) {
+    return true;
+  }
+  else {
+  return false;     
+}
+}
 
   car: Car = {
     regNo: '',
@@ -81,7 +96,7 @@ ngOnInit() {
               break;
             }
           }
-          this.visible3=false; 
+          this.visible3=false;           
         }
 
     makeVisible(){

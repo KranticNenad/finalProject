@@ -11,6 +11,21 @@ export class WarrantComponent implements OnInit {
   visible2: boolean = false;
   visible3: boolean = false;
   visible4: boolean = false;
+  searchVar: string='';
+
+  public search(arg): void {
+    this.searchVar=arg.target.value;
+}
+
+public show(arg:any): boolean {
+ 
+  if(this.searchVar =='' || arg.warrantId.startsWith(this.searchVar) ) {
+    return true;
+  }
+  else {
+  return false;     
+}
+}
 
   makeVisible(){
     this.visible=true;

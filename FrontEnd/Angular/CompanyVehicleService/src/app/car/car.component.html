@@ -10,7 +10,7 @@
 
     <!-- SEARCH INPUT -->
     <div class="right ">
-      <input type="text" placeholder="Search.." name="search">
+      <input type="text" (keyup)="search($event)" placeholder="   Search.." name="search">
     </div>
     <!-- END SEARCH INPUT -->
 
@@ -24,7 +24,7 @@
               <th></th>
               <th>Registration</th>
               <th>TravelledKM</th>
-              <th>avgFuelUse</th>
+              <th>AvgFuelUse</th>
               <th>Model</th>
               <th>IsInUse</th>
               <th>Edit</th>
@@ -35,20 +35,20 @@
           <tbody>
 
             <tr *ngFor="let car of cars">
-              <td></td>
-              <td>{{car.regNo}}</td>
-              <td>{{car.travelledKm}}</td>
-              <td>{{car.avgFuelUse}}</td>
-              <td>{{car.model}}</td>
-              <td>{{car.IsInUse}}</td>
-              <td>
+              <td ></td>
+              <td *ngIf="show(car)">{{car.regNo}}</td>
+              <td *ngIf="show(car)">{{car.travelledKm}}</td>
+              <td *ngIf="show(car)">{{car.avgFuelUse}}</td>
+              <td *ngIf="show(car)">{{car.model}}</td>
+              <td *ngIf="show(car)">{{car.IsInUse}}</td>              
+              <td *ngIf="show(car)">
                 <p data-placement="top" data-toggle="tooltip" title="Edit"><button
                     class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal"
                     data-target="#edit" (click)="makeVisible2(car)"><span class="glyphicon glyphicon-pencil"
                       (click)="makeVisible2(car)"></span></button>
                 </p>
               </td>
-              <td>
+              <td *ngIf="show(car)">
                 <p data-placement="top" data-toggle="tooltip" title="Delete"><button
                     class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal"
                     data-target="#delete" (click)="makeVisible3(car)"><span class="glyphicon glyphicon-trash"
