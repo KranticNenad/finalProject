@@ -301,7 +301,7 @@ button[type=submit].btn{
   flex-direction: column; 
   justify-content: center;
   width: 100%;
-  padding: 20px;
+  padding: 20px;  
 }
 
 .wrapped-div {
@@ -314,7 +314,7 @@ button[type=submit].btn{
   position: relative;
   padding: 0px;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
-  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.9);  
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.9);    
 }
 
 /* Tabs */
@@ -478,6 +478,12 @@ height: 40px;
   border: 1px solid #888;
   width: 50%;
   border-radius: 10px;
+  text-align: center;
+}
+
+.modal2-content button{
+  width:100px;
+  margin-left:0; 
 }
 
 /* CLOSE BUTTON */
@@ -518,6 +524,7 @@ height: 40px;
  border: 1px solid #888;
  width: 40%;
  border-radius: 10px;
+ text-align: center;
 }
 
 /* The Close Button3 */
@@ -534,6 +541,12 @@ height: 40px;
  text-decoration: none;
  cursor: pointer;
 }
+
+.modal3-content button{
+  width:100px;
+  margin-left:0;
+}
+
 
 /*CANCEL BUTTON*/
 .btnCancel {
