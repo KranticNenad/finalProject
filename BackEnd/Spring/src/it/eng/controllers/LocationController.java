@@ -47,7 +47,7 @@ public class LocationController {
 		if(foundLocation == null) {
 			return new ResponseEntity<Location>(HttpStatus.NOT_FOUND);
 		}
-		locationService.updateLocation(foundLocation);
+		locationService.updateLocation(location);
 		return new ResponseEntity<Location>(HttpStatus.OK);
 	}
 	

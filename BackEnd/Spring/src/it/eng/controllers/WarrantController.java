@@ -47,7 +47,7 @@ public class WarrantController {
 		if(foundWarrant == null) {
 			return new ResponseEntity<Warrant>(HttpStatus.NOT_FOUND);
 		}
-		warrantService.updateWarrant(foundWarrant);
+		warrantService.updateWarrant(warrant);
 		return new ResponseEntity<Warrant>(HttpStatus.OK);
 	}
 	
