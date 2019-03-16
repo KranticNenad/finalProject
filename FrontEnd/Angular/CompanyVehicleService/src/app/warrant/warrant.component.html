@@ -37,25 +37,25 @@
           </thead>
           <tbody>
 
-            <tr *ngFor="let employee of employees">
+            <tr *ngFor="let warrant of warrants">
               <td></td>
-              <td *ngIf="show(car)">{{employee.employeeId}}</td>
-              <td *ngIf="show(car)">{{employee.name}}</td>
-              <td *ngIf="show(car)">{{employee.surname}}</td>
-              <td *ngIf="show(car)">{{employee.dob | date:"dd/MM/yyyy"}}</td>
-              <td *ngIf="show(car)">{{employee.salary}}</td>
-              <td *ngIf="show(car)">sdsdsdsdd</td>
-              <td *ngIf="show(car)">sdsdsdsds</td>
-              <td *ngIf="show(car)">sdssdsdsdsd</td>
-              <td *ngIf="show(car)">sdsdsdsdd</td>
-              <td *ngIf="show(car)">
+              <td *ngIf="show(warrant)">{{employee.employeeId}}</td>
+              <td *ngIf="show(warrant)">{{employee.name}}</td>
+              <td *ngIf="show(warrant)">{{employee.surname}}</td>
+              <td *ngIf="show(warrant)">{{employee.dob | date:"dd/MM/yyyy"}}</td>
+              <td *ngIf="show(warrant)">{{employee.salary}}</td>
+              <td *ngIf="show(warrant)">sdsdsdsdd</td>
+              <td *ngIf="show(warrant)">sdsdsdsds</td>
+              <td *ngIf="show(warrant)">sdssdsdsdsd</td>
+              <td *ngIf="show(warrant)">sdsdsdsdd</td>
+              <td *ngIf="show(warrant)">
                 <p data-placement="top" data-toggle="tooltip" title="Edit"><button
                     class="btn btn-info btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
                     (click)="makeVisible4()"><span class="glyphicon glyphicon-map-marker"
                       (click)="makeVisible4()"></span></button>
                 </p>
               </td>
-              <td *ngIf="show(car)">
+              <td *ngIf="show(warrant)">
                 <p data-placement="top" data-toggle="tooltip" title="Edit"><button
                     class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal"
                     data-target="#edit"><span class="glyphicon glyphicon-pencil"

@@ -10,7 +10,7 @@
 
     <!-- SEARCH INPUT -->
     <div class="right ">
-      <input type="text" placeholder="Search.." name="search">
+      <input type="text" (keyup)="search($event)" placeholder="   Search.." name="search">
     </div>
     <!-- END SEARCH INPUT -->
 
@@ -36,19 +36,19 @@
 
             <tr *ngFor="let user of users">
               <td></td>
-              <td>{{user.username}}</td>
-              <td>{{user.password}}</td>
-              <td>{{user.enabled}}</td>
-              <td>{{user.authority}}</td>
-              <td>{{user.email}}</td>
-              <td>
+              <td *ngIf="show(user)">{{user.username}}</td>
+              <td *ngIf="show(user)">{{user.password}}</td>
+              <td *ngIf="show(user)">{{user.enabled}}</td>
+              <td *ngIf="show(user)">{{user.authority}}</td>
+              <td *ngIf="show(user)">{{user.email}}</td>
+              <td *ngIf="show(user)">
                 <p data-placement="top" data-toggle="tooltip" title="Edit"><button
                     class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
                     (click)="makeVisible2()" (click)="clickedOnUser(user)"><span class="glyphicon glyphicon-pencil"
                       (click)="makeVisible2()"></span></button>
                 </p>
               </td>
-              <td>
+              <td *ngIf="show(user)">
                 <p data-placement="top" data-toggle="tooltip" title="Delete"><button
                     class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal" data-target="#delete"
                     (click)="makeVisible3()" (click)="setUserDelete(user.username)"><span class="glyphicon glyphicon-trash"
