@@ -1,3 +1,5 @@
+import { CarService } from './../car/car.service';
+import { Car } from './../car/car.interface';
 import { Warrant } from './warrant.interface';
 import { WarrantService } from './warrant.service';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -19,6 +21,7 @@ export class WarrantComponent implements OnInit {
   visible4: boolean = false;
   clickedLocations: Location[];
   warrants: Warrant[];
+  cars: Car[];
   warrantToDelete: number;
   searchVar: string='';
 
@@ -35,7 +38,7 @@ public show(arg:any): boolean {
   return false;     
 }
 }
-public constructor(private warrantService: WarrantService){
+public constructor(private warrantService: WarrantService, private carService: CarService){
 
 }
 addForm = new FormGroup({
@@ -95,6 +98,10 @@ saveAsPdf() {
 
 setClickedLocations(locations: Location[]){
   this.clickedLocations = locations;
+}
+
+clickedOnAdd(){
+  this.carService.getCars().subscribe(data => this.cars = data.filter(Car => !Car.isInUse));
 }
 
 clickedOnWarrant(warrant:Warrant){
