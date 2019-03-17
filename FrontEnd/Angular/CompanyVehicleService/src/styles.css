@@ -648,3 +648,12 @@ height: 40px;
   
  
 }
+
+.warningCar{
+  background-color: #f2fd5a;
+ 
+}
+
+.dangerCar{
+  background-color: #fd4b4b;
+}
