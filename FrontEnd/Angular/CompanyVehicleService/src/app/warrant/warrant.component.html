@@ -77,101 +77,98 @@
 
 <!-- WARRANT MODAL -->
 <form [formGroup]="addForm">
-<div id="myModal2" class="modal2" *ngIf="visible">    
-  
-  <div class="modal2-content">
-    <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="validationServer">Distance</label>
-        <div class="input-group">
-          <input type="text" formControlName="distance" class="form-control" id="validationServer" placeholder="Distance"
-            aria-describedby="inputGroupPrepend3" required>
+  <div id="myModal2" class="modal2" *ngIf="visible">    
+    
+    <div class="modal2-content">
+      <div class="form-row">
+          <div class="col-md-4 mb-3">
+              <label for="validationServer03">Car</label>
+              <input style="width:308%;" list="cars" formControlName="car" name="car" placeholder="car model" required>
+                <datalist id="cars">
+                  <option *ngFor="let car of cars" value="Registration: {{car.regNo}}">Model: {{car.model}} TravelledKM: {{car.travelledKm}}</option>
+                </datalist>
+              <!-- <input type="text" formControlName="car" class="form-control" id="validationServer03" placeholder="RegNo" required> -->
+              <div class="invalid-feedback" *ngIf="false">
+                <p>Please Enter Car RegNo</p>
+              </div>
+            </div>    
+      </div>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationServer03">ReturnedAt</label>
+          <input type="text" formControlName="returnedAt" class="form-control" id="validationServer03" placeholder="ReturnedAt" required>
           <div class="invalid-feedback" *ngIf="false">
-            <p>Please choose Distance</p>
+            <p>Please Enter ReturnedAt</p>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="form-row">
-      <div class="col-md-4 mb-3">
-        <label for="validationServer03">ReturnedAt</label>
-        <input type="text" formControlName="returnedAt" class="form-control" id="validationServer03" placeholder="ReturnedAt" required>
-        <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter ReturnedAt</p>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer03">FuelUsed</label>
+          <input type="text" formControlName="fuelUsed" class="form-control" id="validationServer03" placeholder="FuelUsed" required>
+          <div class="invalid-feedback" *ngIf="false">
+            <p>Please Enter FuelUsed</p>
+          </div>
+        </div>       
+        <div class="col-md-4 mb-3">
+            <label for="validationServer">Distance</label>         
+              <input type="text" formControlName="distance" class="form-control" id="validationServer" placeholder="Distance"
+                aria-describedby="inputGroupPrepend3" required>
+              <div class="invalid-feedback" *ngIf="false">
+                <p>Please choose Distance</p>
+              </div>          
+          </div>        
+        <div class="col-md-6 mb-3">
+          <label for="validationServer03">Employee</label>
+          <input type="text" formControlName="employee" class="form-control" id="validationServer03" placeholder="EmployeeId" required>
+          <div class="invalid-feedback" *ngIf="false">
+            <p>Please Enter Employee</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="validationServer03">FuelUsed</label>
-        <input type="text" formControlName="fuelUsed" class="form-control" id="validationServer03" placeholder="FuelUsed" required>
-        <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter FuelUsed</p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="validationServer03">Car</label>
-        <input list="cars" formControlName="car" name="car" placeholder="car model" required>
-          <datalist id="cars">
-            <option *ngFor="let car of cars" value="{{car.regNo}}">{{car.model}}</option>
-          </datalist>
-        <!-- <input type="text" formControlName="car" class="form-control" id="validationServer03" placeholder="RegNo" required> -->
-        <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter Car RegNo</p>
-        </div>
-      </div>
-      
-      <div class="col-md-6 mb-3">
-        <label for="validationServer03">Employee</label>
-        <input type="text" formControlName="employee" class="form-control" id="validationServer03" placeholder="EmployeeId" required>
-        <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter Employee</p>
-        </div>
-      </div>
-      <div class="col-md-6 mb-3">
-        <label for="validationServer03">User</label>
-        <input type="text" formControlName="user" class="form-control" id="validationServer03" placeholder="Username" required>
-        <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter User</p>
-        </div>
-      </div>   
-
-    <div class="form-row">
-        <div class="col-md-12 mb-3">
-            <label for="validationServer03">Location 1</label>
-            <input type="text" formControlName="location1" class="form-control" id="validationServer03" placeholder="Location 1" required>
-            <div class="invalid-feedback" *ngIf="false">
-              <p>Please Enter Location 1</p>
+        <div class="col-md-6 mb-3">
+          <label for="validationServer03">User</label>
+          <input type="text" formControlName="user" class="form-control" id="validationServer03" placeholder="Username" required>
+          <div class="invalid-feedback" *ngIf="false">
+            <p>Please Enter User</p>
+          </div>
+        </div>   
+  
+      <div class="form-row">
+          <div class="col-md-12 mb-3">
+              <label for="validationServer03">Location 1</label>
+              <input type="text" formControlName="location1" class="form-control" id="validationServer03" placeholder="Location 1" required>
+              <div class="invalid-feedback" *ngIf="false">
+                <p>Please Enter Location 1</p>
+              </div>
             </div>
+        <div class="col-md-12 mb-3">
+          <label for="validationServer03">Location 2</label>
+          <input type="text" formControlName="location2" class="form-control" id="validationServer03" placeholder="Location 2" required>
+          <div class="invalid-feedback" *ngIf="false">
+            <p>Please Enter Location 2</p>
           </div>
-      <div class="col-md-12 mb-3">
-        <label for="validationServer03">Location 2</label>
-        <input type="text" formControlName="location2" class="form-control" id="validationServer03" placeholder="Location 2" required>
-        <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter Location 2</p>
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="validationServer03">Location 3</label>
+          <input type="text" formControlName="location3" class="form-control" id="validationServer03" placeholder="Location 3" required>
+          <div class="invalid-feedback" *ngIf="false">
+            <p>Please Enter Location 3</p>
+          </div>
+        </div>
+        <div class="col-md-12 mb-3">
+          <label for="validationServer03">Location 4</label>
+          <input type="text" formControlName="location4" class="form-control" id="validationServer03" placeholder="Location 4" required>
+          <div class="invalid-feedback" *ngIf="false">
+            <p>Please Enter Location 4</p>
+          </div>
         </div>
       </div>
-      <div class="col-md-12 mb-3">
-        <label for="validationServer03">Location 3</label>
-        <input type="text" formControlName="location3" class="form-control" id="validationServer03" placeholder="Location 3" required>
-        <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter Location 3</p>
-        </div>
+  
       </div>
-      <div class="col-md-12 mb-3">
-        <label for="validationServer03">Location 4</label>
-        <input type="text" formControlName="location4" class="form-control" id="validationServer03" placeholder="Location 4" required>
-        <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter Location 4</p>
-        </div>
-      </div>
+      <button class="btn btn-success btnAddIn" (click)="addWarrant()">Add</button>
+      <button class="btn btn-danger btnCancel" (click)="closeVisible()">Cancel</button>
     </div>
-
-    </div>
-    <button class="btn btn-success btnAddIn" (click)="addWarrant()">Add</button>
-    <button class="btn btn-danger btnCancel" (click)="closeVisible()">Cancel</button>
   </div>
-</div>
-</form>
-<!-- END WARRANT MODAL -->
+  </form>
+  <!-- END WARRANT MODAL -->
 
 <!-- EDIT WARRANT MODAL -->
 <form [formGroup]="editForm">
