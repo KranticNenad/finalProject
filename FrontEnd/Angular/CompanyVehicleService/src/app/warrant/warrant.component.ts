@@ -1,3 +1,4 @@
+import { Employee } from './../employee/employee.interface';
 import { CarService } from './../car/car.service';
 import { Car } from './../car/car.interface';
 import { Warrant } from './warrant.interface';
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 import * as jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { WarrantDto } from './warrant-dto.interface';
+import { EmployeeService } from '../employee/employee.service';
 
 @Component({
   selector: 'app-warrant',
@@ -22,6 +24,7 @@ export class WarrantComponent implements OnInit {
   clickedLocations: Location[];
   warrants: Warrant[];
   cars: Car[];
+  employees: Employee[];
   warrantToDelete: number;
   searchVar: string='';
 
@@ -38,7 +41,8 @@ public show(arg:any): boolean {
   return false;     
 }
 }
-public constructor(private warrantService: WarrantService, private carService: CarService){
+public constructor(private warrantService: WarrantService,
+  private carService: CarService, private employeeService: EmployeeService){
 
 }
 addForm = new FormGroup({
@@ -99,7 +103,8 @@ setClickedLocations(locations: Location[]){
 }
 
 clickedOnAdd(){
-  this.carService.getCars().subscribe(data => this.cars = data.filter(Car => !Car.isInUse));
+  this.carService.getCars().subscribe(data => this.cars = data.filter(Car => !Car.isInUse && Car.travelledKm < 300000.0));
+  this.employeeService.getEmployees().subscribe(data => this.employees = data);
 }
 
 clickedOnWarrant(warrant:Warrant){
@@ -151,7 +156,10 @@ addWarrant() {
   this.warrantService.postWarrant(warrantToAdd).subscribe(response => {
     response.issuedAt = new Date();
     this.warrants.push(response);
+    response.car.travelledKm += response.distance;
+    this.carService.putCar(response.car).subscribe();
   });
+  
   this.visible = false;
 }
 

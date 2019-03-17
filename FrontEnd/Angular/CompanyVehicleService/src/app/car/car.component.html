@@ -34,7 +34,7 @@
           </thead>
           <tbody>
 
-            <tr *ngFor="let car of cars">
+            <tr *ngFor="let car of cars" [ngClass]='{warning: car.travelledKm >= 50000.0, danger : car.travelledKm >= 300000.0}'>
               <td ></td>
               <td *ngIf="show(car)">{{car.regNo}}</td>
               <td *ngIf="show(car)">{{car.travelledKm}}</td>
