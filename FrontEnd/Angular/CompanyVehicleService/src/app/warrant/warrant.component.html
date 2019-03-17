@@ -80,10 +80,10 @@
   <div id="myModal2" class="modal2" *ngIf="visible">    
     
     <div class="modal2-content">
-      <div class="form-row">
-          <div class="col-md-4 mb-3">
-              <label for="validationServer03">Employee</label>
-              <input list="employees" formControlName="employee" name="employee" placeholder="employee name" required>
+      <div class="form-row data-row">
+          <div class="col-md-6">
+              <!-- <label style="text-align: center;" for="validationServer03">Employee</label> -->
+              <input list="employees" formControlName="employee" name="employee" placeholder="Choose Employee..." required>
               <datalist id="employees">
             <option *ngFor="let employee of employees" value="{{employee.employeeId}}">{{employee.name + " " + employee.surname}}</option>
               </datalist>
@@ -92,11 +92,11 @@
                 <p>Please Enter EmployeeId</p>
               </div>
             </div>    
-      </div>
-      <div class="form-row">
-          <div class="col-md-4 mb-3">
-              <label for="validationServer03">Car</label>
-              <input style="width:308%;" list="cars" formControlName="car" name="car" placeholder="car model" required>
+      
+      <div class="form-row data-row">
+          <div class="col-md-6">
+              <!-- <label for="validationServer03">Car</label> -->
+              <input list="cars" formControlName="car" name="car" placeholder="Choose Car Model..." required>
                 <datalist id="cars">
                   <option *ngFor="let car of cars" value="{{car.regNo}}">Model: {{car.model}} TravelledKM: {{car.travelledKm}}</option>
                 </datalist>
@@ -104,7 +104,8 @@
               <div class="invalid-feedback" *ngIf="false">
                 <p>Please Enter Car RegNo</p>
               </div>
-            </div>    
+            </div>   
+            </div> 
       </div>
       <div class="form-row">
         
@@ -124,7 +125,7 @@
               </div>          
           </div>        
         
-        <div class="col-md-6 mb-3">
+        <div class="col-md-4 mb-3">
           <label for="validationServer03">User</label>
           <input type="text" formControlName="user" class="form-control" id="validationServer03" placeholder="Username" required>
           <div class="invalid-feedback" *ngIf="false">

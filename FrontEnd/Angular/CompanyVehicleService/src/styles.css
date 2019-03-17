@@ -1,4 +1,4 @@
-
+ 
 /* Top Bar
 --------------------------------------------------------------------------------------------------------------- */
 
@@ -648,7 +648,7 @@ height: 40px;
   
  
 }
-
+/* CARS FIELD INDICATOR */
 .warningCar{
   background-color: #f2fd5a;
  
@@ -656,4 +656,13 @@ height: 40px;
 
 .dangerCar{
   background-color: #fd4b4b;
+}
+
+/* WARRANT MODAL DATALIST */
+.data-row input{
+  text-align: center;
+  padding:7px;
+  margin: 0 0 20px 0;
+  font-size:17px;
+  margin-left:20%;
 }
