@@ -1,5 +1,4 @@
 <div class="container-table" *ngIf="true">
-
   <div class="flexContainer">
     <!-- Trigger/Open The Modal -->
     <div class="left">
@@ -30,7 +29,7 @@
               <th>Car</th>
               <th>Employee</th>
               <th>User</th>
-              <th>Location</th>
+              <th>Locations</th>
               <th>Edit</th>
               <th>Delete</th>
             </tr>
@@ -39,44 +38,36 @@
 
             <tr *ngFor="let warrant of warrants">
               <td></td>
-              <td *ngIf="show(warrant)">{{employee.employeeId}}</td>
-              <td *ngIf="show(warrant)">{{employee.name}}</td>
-              <td *ngIf="show(warrant)">{{employee.surname}}</td>
-              <td *ngIf="show(warrant)">{{employee.dob | date:"dd/MM/yyyy"}}</td>
-              <td *ngIf="show(warrant)">{{employee.salary}}</td>
-              <td *ngIf="show(warrant)">sdsdsdsdd</td>
-              <td *ngIf="show(warrant)">sdsdsdsds</td>
-              <td *ngIf="show(warrant)">sdssdsdsdsd</td>
-              <td *ngIf="show(warrant)">sdsdsdsdd</td>
+              <td *ngIf="show(warrant)">{{warrant.warrantId}}</td>
+              <td *ngIf="show(warrant)">{{warrant.issuedAt | date:"dd/MM/yyyy"}}</td>
+              <td *ngIf="show(warrant)">{{warrant.distance}}</td>
+              <td *ngIf="show(warrant)">{{warrant.returnedAt | date:"dd/MM/yyyy"}}</td>
+              <td *ngIf="show(warrant)">{{warrant.fuelUsed}}</td>
+              <td *ngIf="show(warrant)">{{warrant.car.regNo + " " + warrant.car.model}}</td>
+              <td *ngIf="show(warrant)">{{warrant.employee.name + " " + warrant.employee.surname}}</td>
+              <td *ngIf="show(warrant)">{{warrant.user.username}}</td>
               <td *ngIf="show(warrant)">
                 <p data-placement="top" data-toggle="tooltip" title="Edit"><button
                     class="btn btn-info btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
-                    (click)="makeVisible4()"><span class="glyphicon glyphicon-map-marker"
+                    (click)="makeVisible4()" (click)="setClickedLocations(warrant.locations)"><span class="glyphicon glyphicon-map-marker"
                       (click)="makeVisible4()"></span></button>
                 </p>
               </td>
               <td *ngIf="show(warrant)">
                 <p data-placement="top" data-toggle="tooltip" title="Edit"><button
                     class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal"
-                    data-target="#edit" (click)="makeVisible2()" (click)="clickedOnUser(user)"><span class="glyphicon glyphicon-pencil"
+                    data-target="#edit" (click)="makeVisible2()" (click)="clickedOnWarrant(warrant)"><span class="glyphicon glyphicon-pencil"
                       (click)="makeVisible2()"></span></button>
                 </p>
               </td>
               <td>
                 <p data-placement="top" data-toggle="tooltip" title="Delete"><button
                     class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal"
-                    data-target="#delete" (click)="makeVisible3()"><span class="glyphicon glyphicon-trash"
+                    data-target="#delete" (click)="makeVisible3()" (click)="setWarrantDelete(warrant.warrantId)"><span class="glyphicon glyphicon-trash"
                       (click)="makeVisible3()"></span></button>
                 </p>
               </td>
-              
             </tr>
-          
-            
-           
-            
-           
-
           </tbody>
         </table>
       </div>
@@ -85,7 +76,7 @@
 </div>
 
 <!-- WARRANT MODAL -->
-<form>
+<form [formGroup]="addForm">
 <div id="myModal2" class="modal2" *ngIf="visible">    
   
   <div class="modal2-content">
@@ -105,9 +96,9 @@
         </div>
       </div>
       <div class="col-md-4 mb-3">
-        <label for="validationServerUsername">Distance</label>
+        <label for="validationServer">Distance</label>
         <div class="input-group">
-          <input type="text" formControlName="distance" class="form-control" id="validationServerUsername" placeholder="Distance"
+          <input type="text" formControlName="distance" class="form-control" id="validationServer" placeholder="Distance"
             aria-describedby="inputGroupPrepend3" required>
           <div class="invalid-feedback" *ngIf="false">
             <p>Please choose Distance</p>
@@ -132,22 +123,22 @@
       </div>
       <div class="col-md-4 mb-3">
         <label for="validationServer03">Car</label>
-        <input type="text" formControlName="car" class="form-control" id="validationServer03" placeholder="Car" required>
+        <input type="text" formControlName="car" class="form-control" id="validationServer03" placeholder="RegNo" required>
         <div class="invalid-feedback" *ngIf="false">
-          <p>Please Enter Car</p>
+          <p>Please Enter Car RegNo</p>
         </div>
       </div>
       
       <div class="col-md-6 mb-3">
         <label for="validationServer03">Employee</label>
-        <input type="text" formControlName="employee" class="form-control" id="validationServer03" placeholder="Employee" required>
+        <input type="text" formControlName="employee" class="form-control" id="validationServer03" placeholder="EmployeeId" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter Employee</p>
         </div>
       </div>
       <div class="col-md-6 mb-3">
         <label for="validationServer03">User</label>
-        <input type="text" formControlName="user" class="form-control" id="validationServer03" placeholder="User" required>
+        <input type="text" formControlName="user" class="form-control" id="validationServer03" placeholder="Username" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter User</p>
         </div>
@@ -185,7 +176,7 @@
     </div>
 
     </div>
-    <button class="btn btn-success btnAddIn">Edit</button>
+    <button class="btn btn-success btnAddIn" (click)="addWarrant()">Add</button>
     <button class="btn btn-danger btnCancel" (click)="closeVisible()">Cancel</button>
   </div>
 </div>
@@ -193,7 +184,7 @@
 <!-- END WARRANT MODAL -->
 
 <!-- EDIT WARRANT MODAL -->
-<form>
+<form [formGroup]="editForm">
     <div id="myModal4" class="modal2" *ngIf="visible2">    
       
       <div class="modal2-content">
@@ -294,7 +285,7 @@
 
         
         </div>
-        <button class="btn btn-success btnAddIn">Edit</button>
+        <button class="btn btn-success btnAddIn" (click)="editWarrant()">Edit</button>
         <button class="btn btn-danger btnCancel" (click)="closeVisible2()">Cancel</button>
       </div>
     </div>
@@ -309,12 +300,8 @@
 
     <!-- Modal content -->
     <div class="modal3-content">
-      <p>Location 1</p>
-      <p>Location 2</p>
-      <p>Location 3</p>
-      <p>Location 4</p>
-      <button class="btn btn-success btnAddIn" (click)="validateButton4()">Confirm</button>
-      <button class="btn btn-danger btnCancel" (click)="closeVisible4()">Cancel</button>
+      <p *ngFor="let location of clickedLocations">{{location.name}}</p>
+      <button class="btn btn-danger btnCancel" (click)="closeVisible4()">Close</button>
     </div>
   
   </div>
@@ -326,7 +313,7 @@
   <!-- Modal content -->
   <div class="modal3-content">
     <p>Are you sure you want to delete?</p>
-    <button class="btn btn-success btnAddIn" (click)="validateButton3()">Confirm</button>
+    <button class="btn btn-success btnAddIn" (click)="deleteWarrant()">Confirm</button>
     <button class="btn btn-danger btnCancel" (click)="closeVisible3()">Cancel</button>
   </div>
 

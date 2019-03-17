@@ -1,4 +1,10 @@
+import { Warrant } from './warrant.interface';
+import { WarrantService } from './warrant.service';
+import { FormGroup, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import * as jsPDF from 'jspdf';
+import 'jspdf-autotable';
+import { WarrantDto } from './warrant-dto.interface';
 
 @Component({
   selector: 'app-warrant',
@@ -11,6 +17,9 @@ export class WarrantComponent implements OnInit {
   visible2: boolean = false;
   visible3: boolean = false;
   visible4: boolean = false;
+  clickedLocations: Location[];
+  warrants: Warrant[];
+  warrantToDelete: number;
   searchVar: string='';
 
   public search(arg): void {
@@ -26,6 +35,185 @@ public show(arg:any): boolean {
   return false;     
 }
 }
+public constructor(private warrantService: WarrantService){
+
+}
+addForm = new FormGroup({
+  warrantId: new FormControl(''),
+  issuedAt: new FormControl(''),
+  distance: new FormControl(''),
+  returnedAt: new FormControl(''),
+  fuelUsed: new FormControl(''),
+  car: new FormControl(''),
+  employee: new FormControl(''),
+  user: new FormControl(''),
+  location1: new FormControl(''),
+  location2: new FormControl(''),
+  location3: new FormControl(''),
+  location4: new FormControl('')
+});
+
+editForm = new FormGroup({
+  warrantId: new FormControl(''),
+  issuedAt: new FormControl(''),
+  distance: new FormControl(''),
+  returnedAt: new FormControl(''),
+  fuelUsed: new FormControl(''),
+  car: new FormControl(''),
+  employee: new FormControl(''),
+  user: new FormControl(''),
+  location1: new FormControl(''),
+  location2: new FormControl(''),
+  location3: new FormControl(''),
+  location4: new FormControl('')
+});
+
+saveAsPdf() {
+
+  var doc = new jsPDF('l', 'mm', 'a4');
+  let rows = [];
+
+  this.warrants.forEach(warrant => {
+    let locations : string = "";
+    let issuedAtString : string = new Date(warrant.issuedAt).getDate() + '/' + (new Date(warrant.issuedAt).getMonth() + 1) + '/' + new Date(warrant.issuedAt).getFullYear();
+    let returnedAtString : string = new Date(warrant.returnedAt).getDate() + '/' + (new Date(warrant.returnedAt).getMonth() + 1) + '/' + new Date(warrant.returnedAt).getFullYear();
+    warrant.locations.forEach(location => locations += location.name + " ");
+    locations = locations.trim();
+    locations = locations.replace(' ',', ');
+    rows.push([warrant.warrantId, 
+      issuedAtString, warrant.distance, warrant.returnedAt?returnedAtString:"",
+      warrant.fuelUsed, warrant.car.regNo + " " + warrant.car.model,
+      warrant.employee.name + " " + warrant.employee.surname, warrant.user.username, locations]);
+  });
+
+  doc.autoTable({
+    head:[["WarrantId","IssuedAt","Distance","ReturnedAt","FuelUsed","Car","Employee","User","Locations"]],
+    body:rows
+  });
+  doc.save("Warrants.pdf");
+}
+
+setClickedLocations(locations: Location[]){
+  this.clickedLocations = locations;
+}
+
+clickedOnWarrant(warrant:Warrant){
+  let issuedAtString : string = new Date(warrant.issuedAt).getDate() + '/' + (new Date(warrant.issuedAt).getMonth() + 1) + '/' + new Date(warrant.issuedAt).getFullYear();
+  let returnedAtString : string = new Date(warrant.returnedAt).getDate() + '/' + (new Date(warrant.returnedAt).getMonth() + 1) + '/' + new Date(warrant.returnedAt).getFullYear();
+  this.editForm.setValue({warrantId: warrant.warrantId, 
+    issuedAt: issuedAtString, distance: warrant.distance, 
+    returnedAt: warrant.returnedAt?returnedAtString:"",
+    fuelUsed: warrant.fuelUsed, car: warrant.car.regNo,
+    employee:warrant.employee.employeeId, user: warrant.user.username,
+    location1: warrant.locations[0]?warrant.locations[0].locationCode:"",
+     location2:warrant.locations[1]?warrant.locations[1].locationCode:"",
+     location3:warrant.locations[2]?warrant.locations[2].locationCode:"",
+    location4:warrant.locations[3]?warrant.locations[3].locationCode:""});
+}
+
+addWarrant() {
+  let warrantId : number = this.addForm.get('warrantId').value;
+
+  let issuedAtString : string = this.addForm.get('issuedAt').value;
+  let year : number = parseInt (issuedAtString.split('/')[2]);
+  let month : number = parseInt (issuedAtString.split('/')[1]) - 1;
+  let day : number = parseInt (issuedAtString.split('/')[0]);
+  let issuedAt : Date = new Date(year, month, day);
+
+  let distance : number = this.addForm.get('distance').value;
+
+  let returnedAtString : string = this.addForm.get('returnedAt').value;
+  let year2 : number = parseInt (returnedAtString.split('/')[2]);
+  let month2 : number = parseInt (returnedAtString.split('/')[1]) - 1;
+  let day2 : number = parseInt (returnedAtString.split('/')[0]);
+  let returnedAt : Date = new Date(year2, month2, day2);
+
+  let fuelUsed : number = this.addForm.get('fuelUsed').value;
+  let regNo  : string = this.addForm.get('car').value;
+  let employeeId : number = this.addForm.get('employee').value;
+  let username: string = this.addForm.get('user').value;
+  let locationCodes: string[] = [];
+  if (this.addForm.get('location1').value != ""){
+    locationCodes.push(this.addForm.get('location1').value)
+  }
+  if (this.addForm.get('location2').value != ""){
+    locationCodes.push(this.addForm.get('location2').value)
+  }
+  if (this.addForm.get('location3').value != ""){
+    locationCodes.push(this.addForm.get('location3').value)
+  }
+  if (this.addForm.get('location4').value != ""){
+    locationCodes.push(this.addForm.get('location4').value)
+  }
+
+  let warrantToAdd : WarrantDto = {warrantId:warrantId, issuedAt: issuedAt,
+    distance: distance, returnedAt:returnedAt,
+    fuelUsed:fuelUsed, regNo:regNo, employeeId:employeeId,
+    username:username, locationCodes:locationCodes};
+
+  this.warrantService.postWarrant(warrantToAdd).subscribe(response => {
+    response.issuedAt = new Date();
+    this.warrants.push(response);
+  });
+  this.visible = false;
+}
+
+editWarrant() {
+  let warrantId : number = this.editForm.get('warrantId').value;
+
+  let issuedAtString : string = this.editForm.get('issuedAt').value;
+  let year : number = parseInt (issuedAtString.split('/')[2]);
+  let month : number = parseInt (issuedAtString.split('/')[1]) - 1;
+  let day : number = parseInt (issuedAtString.split('/')[0]);
+  let issuedAt : Date = new Date(year, month, day);
+
+  let distance : number = this.editForm.get('distance').value;
+
+  let returnedAtString : string = this.editForm.get('returnedAt').value;
+  let year2 : number = parseInt (returnedAtString.split('/')[2]);
+  let month2 : number = parseInt (returnedAtString.split('/')[1]) - 1;
+  let day2 : number = parseInt (returnedAtString.split('/')[0]);
+  let returnedAt : Date = new Date(year2, month2, day2);
+
+  let fuelUsed : number = this.editForm.get('fuelUsed').value;
+  let regNo  : string = this.editForm.get('car').value;
+  let employeeId : number = this.editForm.get('employee').value;
+  let username: string = this.editForm.get('user').value;
+  let locationCodes: string[] = [];
+  if (this.editForm.get('location1').value != ""){
+    locationCodes.push(this.editForm.get('location1').value)
+  }
+  if (this.editForm.get('location2').value != ""){
+    locationCodes.push(this.editForm.get('location2').value)
+  }
+  if (this.editForm.get('location3').value != ""){
+    locationCodes.push(this.editForm.get('location3').value)
+  }
+  if (this.editForm.get('location4').value != ""){
+    locationCodes.push(this.editForm.get('location4').value)
+  }
+
+  let warrantToEdit : WarrantDto = {warrantId:warrantId, issuedAt: issuedAt,
+    distance: distance, returnedAt:returnedAt,
+    fuelUsed:fuelUsed, regNo:regNo, employeeId:employeeId,
+    username:username, locationCodes:locationCodes};
+
+  this.warrantService.putWarrant(warrantToEdit).subscribe(response => 
+    this.warrants[this.warrants.findIndex(Warrant => Warrant.warrantId == response.warrantId)] = response     
+    );
+  this.visible2 = false;
+}
+
+setWarrantDelete(warrantId : number){
+  this.warrantToDelete = warrantId;
+}
+
+deleteWarrant(){
+  this.warrantService.deleteWarrant(this.warrantToDelete).subscribe();
+  this.warrants = this.warrants.filter(Warrant => Warrant.warrantId != this.warrantToDelete);
+  this.visible3 = false;
+}
+
 
   makeVisible(){
     this.visible=true;
@@ -58,10 +246,9 @@ public show(arg:any): boolean {
   closeVisible4(){
     this.visible4=false;
   }
-  
 
   ngOnInit() {
+    this.warrantService.getWarrants().subscribe(data => this.warrants = data);
+  }
 }
-}
-
 

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import it.eng.dto.WarrantDto;
 import it.eng.model.Warrant;
 import it.eng.services.WarrantService;
 
@@ -36,19 +37,19 @@ public class WarrantController {
 	}
 	
 	@PostMapping("/warrants")
-	public ResponseEntity<Warrant> createWarrant(@RequestBody Warrant warrant){
-		warrantService.createWarrant(warrant);
-		return new ResponseEntity<Warrant>(HttpStatus.OK);
+	public ResponseEntity<Warrant> createWarrant(@RequestBody WarrantDto warrantDto){
+		Warrant createdWarrant = warrantService.createWarrantFromDto(warrantDto);
+		return new ResponseEntity<Warrant>(createdWarrant, HttpStatus.OK);
 	}
 	
 	@PutMapping("/warrants")
-	public ResponseEntity<Warrant> updateWarrant(@RequestBody Warrant warrant){
-		Warrant foundWarrant = warrantService.getWarrant(warrant.getWarrantId());
+	public ResponseEntity<Warrant> updateWarrant(@RequestBody WarrantDto warrantDto){
+		Warrant foundWarrant = warrantService.getWarrant(warrantDto.getWarrantId());
 		if(foundWarrant == null) {
 			return new ResponseEntity<Warrant>(HttpStatus.NOT_FOUND);
 		}
-		warrantService.updateWarrant(warrant);
-		return new ResponseEntity<Warrant>(HttpStatus.OK);
+		Warrant updatedWarrant = warrantService.updateWarrantFromDto(warrantDto);
+		return new ResponseEntity<Warrant>(updatedWarrant, HttpStatus.OK);
 	}
 	
 	@DeleteMapping("/warrants/{warrantId}")
