@@ -42,8 +42,6 @@ public constructor(private warrantService: WarrantService, private carService: C
 
 }
 addForm = new FormGroup({
-  warrantId: new FormControl(''),
-  issuedAt: new FormControl(''),
   distance: new FormControl(''),
   returnedAt: new FormControl(''),
   fuelUsed: new FormControl(''),
@@ -119,14 +117,6 @@ clickedOnWarrant(warrant:Warrant){
 }
 
 addWarrant() {
-  let warrantId : number = this.addForm.get('warrantId').value;
-
-  let issuedAtString : string = this.addForm.get('issuedAt').value;
-  let year : number = parseInt (issuedAtString.split('/')[2]);
-  let month : number = parseInt (issuedAtString.split('/')[1]) - 1;
-  let day : number = parseInt (issuedAtString.split('/')[0]);
-  let issuedAt : Date = new Date(year, month, day);
-
   let distance : number = this.addForm.get('distance').value;
 
   let returnedAtString : string = this.addForm.get('returnedAt').value;
@@ -153,7 +143,7 @@ addWarrant() {
     locationCodes.push(this.addForm.get('location4').value)
   }
 
-  let warrantToAdd : WarrantDto = {warrantId:warrantId, issuedAt: issuedAt,
+  let warrantToAdd : WarrantDto = {warrantId:0, issuedAt:new Date(0),
     distance: distance, returnedAt:returnedAt,
     fuelUsed:fuelUsed, regNo:regNo, employeeId:employeeId,
     username:username, locationCodes:locationCodes};
