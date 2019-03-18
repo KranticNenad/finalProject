@@ -1,5 +1,6 @@
 package it.eng.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -61,6 +62,21 @@ public class CarDao {
 		Session session = HibernateUtil.SessionFactory().openSession();
 		Query<Car> q = session.createQuery("FROM Car WHERE model=model ", it.eng.model.Car.class);
 		List<Car> cars = q.list();
+		session.close();
+		return cars;
+	}
+	
+	public List<Car> getAllUserCars(String user) {
+		Session session = HibernateUtil.SessionFactory().openSession();
+		Query<Warrant> q = session.createQuery("FROM Warrant", it.eng.model.Warrant.class);
+		List<Warrant> warrants = q.list();
+		List<Car> cars = new ArrayList<Car>();
+		for(Warrant warrant: warrants) {
+			if(warrant.getUser().getUsername().equals(user)) {
+				cars.add(warrant.getCar());
+			}
+		}
+		
 		session.close();
 		return cars;
 	}

@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import it.eng.dao.UserDao;
 import it.eng.model.User;
 
@@ -36,13 +39,23 @@ public class UserService {
 
 	public String loginUser(String username, String password) {
 		User user = userDao.getUser(username);
+		System.out.println("USER SERVICE KORISNIK");
+		System.out.println(user);
+		ObjectMapper mapper = new ObjectMapper();
+		String ret="";
+		try {
+			ret = mapper.writeValueAsString(user);
+		} catch (JsonProcessingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		if(user==null) {
 			return "User does not exist!";
 		}
 		
 		else {
 		if (user.getPassword().equals(password)) {
-			return "true";
+			return ret;
 			} 
 		else {
 				return "false";

@@ -61,6 +61,7 @@ public class Login {
 			session.setAttribute("user",loginm);
 			loginm.setStatus("true");
 			loginm.setAuth(user.getAuthority());
+			System.out.println(user.getAuthority());
 			loginm.setUserName(user.getUsername());
 			return loginm;
 		}
