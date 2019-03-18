@@ -1,7 +1,7 @@
 package it.eng.dao;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -73,10 +73,15 @@ public class CarDao {
 		List<Car> cars = new ArrayList<Car>();
 		for(Warrant warrant: warrants) {
 			if(warrant.getUser().getUsername().equals(user)) {
+				if(cars.contains(warrant.getCar())) {
+					
+				}
+				else {
 				cars.add(warrant.getCar());
+				}
 			}
 		}
-		
+
 		session.close();
 		return cars;
 	}

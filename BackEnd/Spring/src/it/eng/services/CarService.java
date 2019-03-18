@@ -13,6 +13,10 @@ public class CarService {
 	@Autowired
 	private CarDao carDao;
 	
+	public List<Car> getAllUserCars(String user) {
+		return carDao.getAllUserCars(user);
+	}
+	
 	public List<Car> getAllCars(){
 		return carDao.getAllCars();
 	}
@@ -30,9 +34,6 @@ public class CarService {
 	}
 	public void deleteCar(Car car) {
 		carDao.deleteCar(car);
-	}
-	public List<Car> getAllUserCars(String user) {
-		return carDao.getAllUserCars(user);
 	}
 	/*
 	 public Car searchCars(String carId) {

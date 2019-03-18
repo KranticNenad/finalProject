@@ -6,6 +6,7 @@ import it.eng.dao.CarDao;
 import it.eng.dao.UserDao;
 import it.eng.hibernateUtil.HibernateUtil;
 
+
 public class Test {
 
 	public static void main(String[] args) {
