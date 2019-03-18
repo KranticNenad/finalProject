@@ -89,7 +89,6 @@ public class Location {
 	public String toString() {
 		return "Location [locationCode=" + locationCode + 
 				"name=" + name + ", dailyPayment=" + dailyPayment 
-				+ ", warrants=" + warrants
 				+ ", country=" + country.getCountryCode() + "]";
 	}
 

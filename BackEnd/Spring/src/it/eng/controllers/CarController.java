@@ -1,10 +1,10 @@
 package it.eng.controllers;
 
 import java.util.List;
-
+import it.eng.model.LoginM;
+import it.eng.model.User;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,8 +19,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import it.eng.model.Car;
-import it.eng.model.LoginM;
-import it.eng.model.User;
 import it.eng.services.CarService;
 
 @Controller
@@ -35,22 +33,34 @@ public class CarController {
 		return carService.getCar(regNo);        
     }
 	
-	@GetMapping("/cars")
-	public @ResponseBody List<Car> getAllCars(){
-			return carService.getAllCars();
-	} 
 	@GetMapping("/usercars/{user}")
 	public @ResponseBody List<Car> getAllCars(@PathVariable String user){
 			return carService.getAllUserCars(user);
-	}   
+	} 
+	
+	@GetMapping("/cars")
+	public @ResponseBody List<Car> getAllCars(){
+		return carService.getAllCars();
+	} 
+	
 	@PostMapping("/cars")
 	public ResponseEntity<Car> createCar(@RequestBody Car car) {
 		carService.createCar(car);
 		return new ResponseEntity<Car>(HttpStatus.OK);
 	}
 	
-	@PutMapping("/updateCar")
+	@PutMapping("/cars")
 	public ResponseEntity<Car> updateCar (@RequestBody Car car){
+		Car foundCar = carService.getCar(car.getRegNo());
+		if(foundCar == null) {
+			return new ResponseEntity<Car>(HttpStatus.NOT_FOUND);
+		}
+		carService.updateCar(car);
+		return new ResponseEntity<Car>(HttpStatus.OK);
+	}
+	
+	@PutMapping("/updateCar")
+	public ResponseEntity<Car> updateCar2 (@RequestBody Car car){
 		System.out.println("UPDATE");
 		Car foundCar = carService.getCar(car.getRegNo());
 		if(foundCar == null) {
