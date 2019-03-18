@@ -149,7 +149,7 @@ addWarrant() {
     response.issuedAt = new Date();
     this.warrants.push(response);
     response.car.travelledKm += response.distance;
-    response.car.isInUse = true;
+    response.car.isInUse=true;
     this.carService.putCar(response.car).subscribe();
   });
   
@@ -197,12 +197,14 @@ editWarrant() {
     username:username, locationCodes:locationCodes};
 
   this.warrantService.putWarrant(warrantToEdit).subscribe(response => {
-    this.warrants[this.warrants.findIndex(Warrant => Warrant.warrantId == response.warrantId)] = response;
-    if (response.returnedAt){
+    this.warrants[this.warrants.findIndex(Warrant => Warrant.warrantId == response.warrantId)] = response;     
+    if(response.returnedAt){
       response.car.isInUse = false;
       this.carService.putCar(response.car).subscribe();
     }
-  });
+   });    
+
+    
   this.visible2 = false;
 }
 

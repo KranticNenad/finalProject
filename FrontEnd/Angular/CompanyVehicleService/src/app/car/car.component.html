@@ -36,11 +36,11 @@
 
             <tr *ngFor="let car of cars" [ngClass]='{warningCar : car.travelledKm >= 50000.0, dangerCar : car.travelledKm >= 300000.0}'>
               <td ></td>
-              <td *ngIf="show(car)">{{car.regNo}}</td>
+              <td *ngIf="show(car)">{{car.regNo}}</td>              
               <td *ngIf="show(car)">{{car.travelledKm}}</td>
               <td *ngIf="show(car)">{{car.avgFuelUse}}</td>
               <td *ngIf="show(car)">{{car.model}}</td>
-              <td *ngIf="show(car)">{{car.IsInUse}}</td>              
+              <td *ngIf="show(car)">{{car.isInUse}}</td>              
               <td *ngIf="show(car)">
                 <p data-placement="top" data-toggle="tooltip" title="Edit"><button
                     class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal"
@@ -56,6 +56,7 @@
                 </p>
               </td>
             </tr>
+            
           </tbody>
         </table>
       </div>
