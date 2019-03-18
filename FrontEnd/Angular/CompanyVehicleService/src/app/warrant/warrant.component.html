@@ -81,8 +81,7 @@
     
     <div class="modal2-content">
       <div class="form-row data-row">
-          <div class="col-md-6">
-              <!-- <label style="text-align: center;" for="validationServer03">Employee</label> -->
+          <div class="col-md-6">              
               <input list="employees" formControlName="employee" name="employee" placeholder="Choose Employee..." required>
               <datalist id="employees">
             <option *ngFor="let employee of employees" value="{{employee.employeeId}}">{{employee.name + " " + employee.surname}}</option>
@@ -94,8 +93,7 @@
             </div>    
       
       <div class="form-row data-row">
-          <div class="col-md-6">
-              <!-- <label for="validationServer03">Car</label> -->
+          <div class="col-md-6">           
               <input list="cars" formControlName="car" name="car" placeholder="Choose Car Model..." required>
                 <datalist id="cars">
                   <option *ngFor="let car of cars" value="{{car.regNo}}">Model: {{car.model}} TravelledKM: {{car.travelledKm}}</option>
@@ -134,28 +132,28 @@
         </div>   
   
       <div class="form-row">
-          <div class="col-md-12 mb-3">
+          <div class="col-md-3 mb-3">
               <label for="validationServer03">Location 1</label>
               <input type="text" formControlName="location1" class="form-control" id="validationServer03" placeholder="Location 1" required>
               <div class="invalid-feedback" *ngIf="false">
                 <p>Please Enter Location 1</p>
               </div>
             </div>
-        <div class="col-md-12 mb-3">
+        <div class="col-md-3 mb-3">
           <label for="validationServer03">Location 2</label>
           <input type="text" formControlName="location2" class="form-control" id="validationServer03" placeholder="Location 2" required>
           <div class="invalid-feedback" *ngIf="false">
             <p>Please Enter Location 2</p>
           </div>
         </div>
-        <div class="col-md-12 mb-3">
+        <div class="col-md-3 mb-3">
           <label for="validationServer03">Location 3</label>
           <input type="text" formControlName="location3" class="form-control" id="validationServer03" placeholder="Location 3" required>
           <div class="invalid-feedback" *ngIf="false">
             <p>Please Enter Location 3</p>
           </div>
         </div>
-        <div class="col-md-12 mb-3">
+        <div class="col-md-3 mb-3">
           <label for="validationServer03">Location 4</label>
           <input type="text" formControlName="location4" class="form-control" id="validationServer03" placeholder="Location 4" required>
           <div class="invalid-feedback" *ngIf="false">
@@ -242,28 +240,28 @@
           </div>   
     
         <div class="form-row">
-            <div class="col-md-12 mb-3">
+            <div class="col-md-3 mb-3">
                 <label for="validationServer03">Location 1</label>
                 <input type="text" formControlName="location1" class="form-control" id="validationServer03" placeholder="Location 1" required>
                 <div class="invalid-feedback" *ngIf="false">
                   <p>Please Enter Location 1</p>
                 </div>
               </div>
-          <div class="col-md-12 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="validationServer03">Location 2</label>
             <input type="text" formControlName="location2" class="form-control" id="validationServer03" placeholder="Location 2" required>
             <div class="invalid-feedback" *ngIf="false">
               <p>Please Enter Location 2</p>
             </div>
           </div>
-          <div class="col-md-12 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="validationServer03">Location 3</label>
             <input type="text" formControlName="location3" class="form-control" id="validationServer03" placeholder="Location 3" required>
             <div class="invalid-feedback" *ngIf="false">
               <p>Please Enter Location 3</p>
             </div>
           </div>
-          <div class="col-md-12 mb-3">
+          <div class="col-md-3 mb-3">
             <label for="validationServer03">Location 4</label>
             <input type="text" formControlName="location4" class="form-control" id="validationServer03" placeholder="Location 4" required>
             <div class="invalid-feedback" *ngIf="false">

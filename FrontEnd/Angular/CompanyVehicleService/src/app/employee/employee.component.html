@@ -40,7 +40,7 @@
               <td *ngIf="show(employee)">{{employee.name}}</td>
               <td *ngIf="show(employee)">{{employee.surname}}</td>
               <td *ngIf="show(employee)">{{employee.dob | date:"dd/MM/yyyy"}}</td>
-              <td *ngIf="show(employee)">{{employee.salary}}</td>
+              <td *ngIf="show(employee)" >{{employee.salary}}</td>
               <td *ngIf="show(employee)">
                 <p data-placement="top" data-toggle="tooltip" title="Edit"><button
                     class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
