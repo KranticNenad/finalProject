@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-
 import { CheckService } from './check.service';
+import { Component, OnInit } from '@angular/core';
+
 import { Login } from './login/login.interface';
 import { Router } from '@angular/router';
 
@@ -16,15 +14,13 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
 
   login: Login;
-  name= 'check';
+  name= '';
   visible: boolean=false;
 
 
   public constructor(private checkService: CheckService,private router: Router) {}
 
   ngOnInit() {
-    
-    console.log("DSADSADSADSA PROMENJENA RUTA");
     this.checkService.getStatus().subscribe(data => this.login=data);
     setTimeout(()=> {
       if(this.login.status=='true') {
@@ -33,11 +29,11 @@ export class AppComponent implements OnInit {
       else {
         this.visible=false;
       }
-    },200)
-    
+    },2000)
+
     this.checkService.subject.subscribe(
       data => {
-      
+
         this.login=data;
         if(this.login.status=='true') {
           this.visible=true;
@@ -47,14 +43,15 @@ export class AppComponent implements OnInit {
           this.visible=false;
           this.name='';
         }
-        
+
       }
     );
-  
+
   }
 
   show() {
-    
+
     this.visible=true;
   }
+   
 }

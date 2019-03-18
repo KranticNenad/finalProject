@@ -13,12 +13,14 @@ import { CheckService } from '../check.service';
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
-  disabledv = true;
+
   visible: boolean = false;
   visible2: boolean = false;
   visible3: boolean = false;
   argument: any='';
   searchVar: string='';
+  disabledv = true;
+  login: Login;
 
   public search(arg): void {
     this.searchVar=arg.target.value;
@@ -56,33 +58,33 @@ public show(arg:any): boolean {
   });
 
     cars: Car[];
-    login: Login;
 
    public constructor(private carService: CarService,private checkService: CheckService) {}
 
 ngOnInit() {
   this.checkService.getStatus().subscribe(data => { 
-      console.log(data);
-      this.login = data;
-  });
-        setTimeout(()=>{
-              this.printData();             
-        },
-        2000)
-        
-    }
+    console.log(data);
+    this.login = data;
+});
+      setTimeout(()=>{
+            this.printData();             
+      },
+      2000)
 
-    public printData(): void {
-      if(this.login.auth=='admin') {
-        this.disabledv=false;
+  }
+
+  public printData(): void {
+    if(this.login.auth=='admin') {
+      this.disabledv=false;
         this.carService.getCars().subscribe(data => this.cars = data);
-        }
-        else if(this.login.auth =='user') {
-          this.disabledv=true;
-          console.log(this.login.userName+ "OVO JE USERNAME");
-          this.carService.getUserCars(this.login.userName).subscribe(data => this.cars=data);
-        }
-        
+      }
+      else if(this.login.auth =='user') {
+        this.disabledv=true;
+        console.log(this.login.userName+ "OVO JE USERNAME");
+        this.carService.getCars().subscribe(data => this.cars=data);
+      }
+
+
     }
 
     public addCar(): void {
@@ -92,17 +94,16 @@ ngOnInit() {
       this.car.travelledKm=this.addCarForm.get("travelledKm").value
       this.car.avgFuelUse=this.addCarForm.get("avgFuelUse").value
       this.car.model=this.addCarForm.get("model").value
-      this.car.isInUse=true;
+      this.car.isInUse=false;
       this.carService.postCar(this.car).subscribe(car =>
         this.car);
       this.cars.push(this.car);
       this.visible=false;
       console.log(this.car);
-      
       }
 
       public editCarFormMethod(): void {
-        
+
         this.car.regNo=this.argument.regNo;
         this.car.travelledKm=this.editCarForm.get("travelledKm").value;
         this.car.avgFuelUse=this.editCarForm.get("avgFuelUse").value;

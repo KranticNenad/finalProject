@@ -16,6 +16,7 @@ export class CheckService {
 
   getArgument(arg: any) {
     this.subject.next(arg);
+    this.login = arg;
   }
   
 }

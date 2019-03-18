@@ -18,40 +18,28 @@ export class UserComponent implements OnInit {
   visible: boolean = false;
   visible2: boolean = false;
   visible3: boolean = false;
-  searchVar: string='';
-
-  public search(arg): void {
-    this.searchVar=arg.target.value;
-}
-
-public show(arg:any): boolean {
- 
-  if(this.searchVar =='' || arg.username.startsWith(this.searchVar) ) {
-    return true;
-  }
-  else {
-  return false;     
-}
-}
 
   users:User[];
   userToDelete: string;
   login: Login;
+  disabledv : boolean = true;
 
   public constructor(private userService: UserService,private checkService: CheckService) {
   }
+
   ngOnInit() {
     this.checkService.getStatus().subscribe(data =>this.login=data);
     setTimeout(()=>{
       if(this.login.auth=='admin') {
+        this.disabledv = false;
         this.userService.getUsers().subscribe(data => this.users = data);  
       }
       else {
         console.log("NISTE ADMIN NE MOZETE DA VIDITE USERE!");
       }             
-},
-2000)
+    },2000);
   }
+
   addForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
@@ -125,7 +113,6 @@ public show(arg:any): boolean {
     this.visible3 = false;
   }
 
-  
 
   makeVisible(){
     this.visible=true;

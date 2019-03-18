@@ -3,14 +3,14 @@
   <div class="flexContainer">
     <!-- Trigger/Open The Modal -->
     <div class="left">
-      <button class="btnAdd" (click)="makeVisible()">Add User</button>
-      <button class=" btnAdd saveAsPdf" (click)="saveAsPdf()" *ngIf="false">PDF</button>
+      <button [disabled]="disabledv" class="btnAdd" (click)="makeVisible()">Add User</button>
+      <button [disabled]="disabledv" class=" btnAdd saveAsPdf" (click)="saveAsPdf()" *ngIf="false">PDF</button>
     </div>
     <!-- END Trigger/Open The Modal -->
 
     <!-- SEARCH INPUT -->
     <div class="right ">
-      <input type="text" (keyup)="search($event)" placeholder="   Search.." name="search">
+      <input type="text" placeholder="Search.." name="search">
     </div>
     <!-- END SEARCH INPUT -->
 
@@ -36,19 +36,19 @@
 
             <tr *ngFor="let user of users">
               <td></td>
-              <td *ngIf="show(user)">{{user.username}}</td>
-              <td *ngIf="show(user)">{{user.password}}</td>
-              <td *ngIf="show(user)">{{user.enabled}}</td>
-              <td *ngIf="show(user)">{{user.authority}}</td>
-              <td *ngIf="show(user)">{{user.email}}</td>
-              <td *ngIf="show(user)">
+              <td>{{user.username}}</td>
+              <td>{{user.password}}</td>
+              <td>{{user.enabled}}</td>
+              <td>{{user.authority}}</td>
+              <td>{{user.email}}</td>
+              <td>
                 <p data-placement="top" data-toggle="tooltip" title="Edit"><button
                     class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal" data-target="#edit"
                     (click)="makeVisible2()" (click)="clickedOnUser(user)"><span class="glyphicon glyphicon-pencil"
                       (click)="makeVisible2()"></span></button>
                 </p>
               </td>
-              <td *ngIf="show(user)">
+              <td>
                 <p data-placement="top" data-toggle="tooltip" title="Delete"><button
                     class="btn btn-danger btn-xs btnRight" data-title="Delete" data-toggle="modal" data-target="#delete"
                     (click)="makeVisible3()" (click)="setUserDelete(user.username)"><span class="glyphicon glyphicon-trash"
@@ -126,7 +126,7 @@
           <div class="form-row">
               <div class="col-md-4 mb-3">
                 <label for="username">Username</label>
-                <input formControlName="username" type="text" class="form-control" id="username" placeholder="Username" required>
+                <input disabled formControlName="username" type="text" class="form-control" id="username" placeholder="Username" required>
                 <div class="invalid-feedback" *ngIf="false">
                   <p>Please Enter Username</p>
                 </div>
@@ -164,7 +164,6 @@
         
         <button class="btn btn-success btnAddIn" (click)="editUser()">Edit</button>
         <button class="btn btn-danger btnCancel" (click)="closeVisible2()">Cancel</button>
-        {{editForm.value | json}}
       </div>
     
     </div>

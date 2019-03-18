@@ -3,7 +3,7 @@
   <div class="flexContainer">
     <!-- Trigger/Open The Modal -->
     <div class="left">
-      <button [disabled]="disabledv" class="btnAdd"  (click)="makeVisible()">Add Car</button>
+      <button class="btnAdd"  (click)="makeVisible()">Add Car</button>
       <button class=" btnAdd saveAsPdf" (click)="saveAsPdf()" *ngIf="false">PDF</button>
     </div>
     <!-- END Trigger/Open The Modal -->
@@ -18,7 +18,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="table-responsive tableFixHead">
-        <table id="mytable" class="table table-striped table-hover">
+        <table id="mytable" class="table  table-hover">
           <thead>
             <tr>
               <th></th>
@@ -34,7 +34,7 @@
           </thead>
           <tbody>
 
-            <tr *ngFor="let car of cars">
+            <tr *ngFor="let car of cars" [ngClass]="{'warningCar': car.travelledKm > 50000.0, 'dangerCar' : car.travelledKm >= 300000.0}">
               <td ></td>
               <td *ngIf="show(car)">{{car.regNo}}</td>
               <td *ngIf="show(car)">{{car.travelledKm}}</td>
@@ -42,7 +42,7 @@
               <td *ngIf="show(car)">{{car.model}}</td>
               <td *ngIf="show(car)">{{car.isInUse}}</td>              
               <td *ngIf="show(car)">
-                <p data-placement="top" data-toggle="tooltip" title="Edit"><button [disabled]="disabledv"
+                <p data-placement="top" data-toggle="tooltip" title="Edit" ><button
                     class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal"
                     data-target="#edit" (click)="makeVisible2(car)"><span class="glyphicon glyphicon-pencil"
                       (click)="makeVisible2(car)"></span></button>

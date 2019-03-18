@@ -14,7 +14,7 @@ import { Login } from '../login/login.interface';
 })
 export class EmployeeComponent implements OnInit {
 
-  public constructor(private employeeService: EmployeeService,private checkService: CheckService) {
+  public constructor(private employeeService: EmployeeService, private checkService: CheckService) {
   }
 
     visible: boolean = false;
@@ -22,25 +22,29 @@ export class EmployeeComponent implements OnInit {
     visible3: boolean = false;
     searchVar: string='';
     login: Login;
+    salaryV: boolean=true;
+    disabledv = true;
 
   public search(arg): void {
     this.searchVar=arg.target.value;
 }
 
-  public show(arg:any): boolean {
+public show(arg:any): boolean {
     
-    if(this.searchVar =='' || arg.employeeId.toString()== this.searchVar  || arg.surname.toLowerCase().startsWith(this.searchVar.toLowerCase()) || arg.name.toLowerCase().startsWith(this.searchVar.toLowerCase()) || arg.salary.toString() ==this.searchVar)  {
-    return true;
-      }
-    else {
-      return false;     
-        }
+  if(this.searchVar =='' || 
+    arg.employeeId.toString()== this.searchVar  ||
+    arg.surname.toLowerCase().startsWith(this.searchVar.toLowerCase()) ||
+    arg.name.toLowerCase().startsWith(this.searchVar.toLowerCase()) ||
+    arg.salary.toString() ==this.searchVar)  {
+      return true;
     }
+  else {
+  return false;     
+}
+}
    
     employees: Employee[];
     employeeToDelete: number;
-    employee1: Employee;
-    employee2: Employee = {employeeId:123, name:"Tamir", surname:"Abdelmalek", dob: new Date(1750,11,25), salary: 4325.23, about: "I AM THE BEST TECH"};
 
     
 
@@ -130,21 +134,9 @@ export class EmployeeComponent implements OnInit {
     this.visible3 = false;
   }
 
-    post(){
-      this.employeeService.postEmployee(this.employee2).subscribe(employee => this.employee1);
-    }
-
-    delete(){
-      this.employeeService
-    }
-
-    salaryV: boolean=true;
-    disabledv = true;
-
     ngOnInit() {
       this.checkService.getStatus().subscribe(login => this.login=login);
       this.employeeService.getEmployees().subscribe(data => this.employees = data);
-      this.employeeService.getEmployee(34523).subscribe(data => this.employee1 = data);
       setTimeout(()=> 
       {
         if(this.login.auth=='user') {

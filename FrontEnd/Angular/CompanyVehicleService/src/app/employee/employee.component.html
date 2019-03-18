@@ -29,6 +29,7 @@
               <th *ngIf="salaryV">Salary</th>
               <th>Edit</th>
               <th>Delete</th>
+
             </tr>
           </thead>
           <tbody>
@@ -130,7 +131,7 @@
     <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="employeeId">ID</label>
-        <input type="text" formControlName="employeeId" class="form-control" id="employeeId" placeholder="EmployeeId" required>
+        <input disabled type="text" formControlName="employeeId" class="form-control" id="employeeId" placeholder="EmployeeId" required>
         <div class="invalid-feedback" *ngIf="false">
           <p>Please Enter EmployeeId</p>
         </div>

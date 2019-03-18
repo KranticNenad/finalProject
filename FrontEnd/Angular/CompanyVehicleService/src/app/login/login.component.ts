@@ -43,7 +43,8 @@ export class LoginComponent implements OnInit {
       if (this.login.status == 'true') {
           this.router.navigate(['/car']);
           this.checkService.getArgument(this.login);
-           }
-      },5000);
-    }
+      }
+    },5000);
+    
+  }
 }
