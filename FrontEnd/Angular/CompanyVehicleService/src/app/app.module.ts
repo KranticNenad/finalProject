@@ -17,6 +17,8 @@ import { WarrantComponent } from './warrant/warrant.component';
 import { CountryComponent } from './country/country.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CheckComponent } from './check/check.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LocationComponent,
     CarComponent,
     WarrantComponent,
-    CountryComponent
+    CountryComponent,
+    CheckComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
       {path: 'employee', component: EmployeeComponent},
       {path: 'car', component: CarComponent},
       {path: '', component: LoginComponent},
-      {path: 'registration', component: RegisterComponent}
+      {path: 'registration', component: RegisterComponent},
+      {path: 'check', component: CheckComponent},
+      {path: 'logout', component: LogoutComponent}
     ])
   ],
   providers: [],

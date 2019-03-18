@@ -1,8 +1,8 @@
 
 
-<div class="ifn" *ngIf=true>
+<div class="ifn" >
    <!--HEADER TOP-->
-   <div class="row0">
+   <div class="row0" *ngIf="visible" >
     <div id="topbar" class="hoc clear">
       <div class="fl_left">
         <ul>
@@ -18,12 +18,13 @@
       <div class="fl_right">
         <ul>
           <li>
-            <a href="index.html"><i class="fa fa-lg fa-home glow"></i></a>
+            <a routerLink="/car"> <i class="fa fa-lg fa-home glow"></i></a>
           </li>
           
           <li>
-            <a class="pointer" >Logout</a>
+            <a routerLink="/logout">logout</a>
           </li>
+          <li routerLinkActive="active current"><a routerLink="/check">{{name}}</a></li>
         </ul>
       </div>
     </div>    
@@ -32,7 +33,7 @@
 
 
 <!--HEADER-->
-<div class="row1">
+<div class="row1" *ngIf="visible">
   <header id="header" class="hoc clear">
     <!-- Logo -->
     <div >
@@ -59,6 +60,7 @@
 <footer>
 <div class="footer">
   <p>Copyright &copy; 2019 - All Rights Reserved</p>
+  <button (click)="show()">CLICK</button>
 </div>  
 
 </footer> 

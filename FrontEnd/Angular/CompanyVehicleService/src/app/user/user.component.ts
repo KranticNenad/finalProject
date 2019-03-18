@@ -4,6 +4,9 @@ import { Component, OnInit } from '@angular/core';
 import { User } from './user.interface';
 import * as jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import { CheckService } from '../check.service';
+import { Login } from '../login/login.interface';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-user',
@@ -33,10 +36,22 @@ public show(arg:any): boolean {
 
   users:User[];
   userToDelete: string;
+  login: Login;
 
-  public constructor(private userService: UserService) {
+  public constructor(private userService: UserService,private checkService: CheckService) {
   }
-
+  ngOnInit() {
+    this.checkService.getStatus().subscribe(data =>this.login=data);
+    setTimeout(()=>{
+      if(this.login.auth=='admin') {
+        this.userService.getUsers().subscribe(data => this.users = data);  
+      }
+      else {
+        console.log("NISTE ADMIN NE MOZETE DA VIDITE USERE!");
+      }             
+},
+2000)
+  }
   addForm = new FormGroup({
     username: new FormControl(''),
     password: new FormControl(''),
@@ -110,9 +125,7 @@ public show(arg:any): boolean {
     this.visible3 = false;
   }
 
-  ngOnInit() {
-    this.userService.getUsers().subscribe(data => this.users = data);
-  }
+  
 
   makeVisible(){
     this.visible=true;

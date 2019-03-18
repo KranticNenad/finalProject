@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import * as jsPDF from 'jspdf';
 import 'jspdf-autotable';
+import { CheckService } from '../check.service';
+import { Login } from '../login/login.interface';
 
 @Component({
   selector: 'app-employee',
@@ -12,27 +14,28 @@ import 'jspdf-autotable';
 })
 export class EmployeeComponent implements OnInit {
 
-  public constructor(private employeeService: EmployeeService) {
+  public constructor(private employeeService: EmployeeService,private checkService: CheckService) {
   }
 
     visible: boolean = false;
     visible2: boolean = false;
     visible3: boolean = false;
     searchVar: string='';
+    login: Login;
 
   public search(arg): void {
     this.searchVar=arg.target.value;
 }
 
-public show(arg:any): boolean {
- 
-  if(this.searchVar =='' || arg.name.startsWith(this.searchVar) ) {
+  public show(arg:any): boolean {
+    
+    if(this.searchVar =='' || arg.employeeId.toString()== this.searchVar  || arg.surname.toLowerCase().startsWith(this.searchVar.toLowerCase()) || arg.name.toLowerCase().startsWith(this.searchVar.toLowerCase()) || arg.salary.toString() ==this.searchVar)  {
     return true;
-  }
-  else {
-  return false;     
-}
-}
+      }
+    else {
+      return false;     
+        }
+    }
    
     employees: Employee[];
     employeeToDelete: number;
@@ -135,9 +138,22 @@ public show(arg:any): boolean {
       this.employeeService
     }
 
+    salaryV: boolean=true;
+    disabledv = true;
+
     ngOnInit() {
+      this.checkService.getStatus().subscribe(login => this.login=login);
       this.employeeService.getEmployees().subscribe(data => this.employees = data);
       this.employeeService.getEmployee(34523).subscribe(data => this.employee1 = data);
+      setTimeout(()=> 
+      {
+        if(this.login.auth=='user') {
+          this.salaryV=false;
+        }
+        else {
+          this.disabledv=false;
+        }
+      },1500);
     }
 
     makeVisible(){

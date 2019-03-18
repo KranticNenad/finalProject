@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { LoginService } from '../login.service';
 import { Login } from './login.interface';
 import { Router } from '@angular/router';
+import { CheckService } from '../check.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   password: string = '';
   login: Login;
 
-  constructor(private loginService: LoginService, private router: Router) {
+  constructor(private loginService: LoginService, private router: Router,private checkService: CheckService) {
   }
 
   registerForm = new FormGroup({
@@ -39,16 +40,10 @@ export class LoginComponent implements OnInit {
     console.log('http://localhost:8080/finalProject/login?username=' + this.username + '&' + 'password=' + this.password);
     this.loginService.getStatus(this.username, this.password).subscribe(data => this.login = data);
     setTimeout(() => {
-
-      if (this.login.status = 'true') {
-        if (this.login.auth = 'user') {
+      if (this.login.status == 'true') {
           this.router.navigate(['/car']);
-        }
-      }
-
-    },
-      5000
-    );
-    
-  }
+          this.checkService.getArgument(this.login);
+           }
+      },5000);
+    }
 }

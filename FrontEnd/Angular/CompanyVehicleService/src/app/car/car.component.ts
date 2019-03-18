@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CarService } from './car.service';
 import { Car } from './car.interface';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { CheckComponent } from '../check/check.component';
+import { Login } from '../login/login.interface';
+import { CheckService } from '../check.service';
 
 
 @Component({
@@ -10,7 +13,7 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
   styleUrls: ['./car.component.css']
 })
 export class CarComponent implements OnInit {
-
+  disabledv = true;
   visible: boolean = false;
   visible2: boolean = false;
   visible3: boolean = false;
@@ -53,11 +56,33 @@ public show(arg:any): boolean {
   });
 
     cars: Car[];
+    login: Login;
 
-   public constructor(private carService: CarService) {}
+   public constructor(private carService: CarService,private checkService: CheckService) {}
 
 ngOnInit() {
+  this.checkService.getStatus().subscribe(data => { 
+      console.log(data);
+      this.login = data;
+  });
+        setTimeout(()=>{
+              this.printData();             
+        },
+        2000)
+        
+    }
+
+    public printData(): void {
+      if(this.login.auth=='admin') {
+        this.disabledv=false;
         this.carService.getCars().subscribe(data => this.cars = data);
+        }
+        else if(this.login.auth =='user') {
+          this.disabledv=true;
+          console.log(this.login.userName+ "OVO JE USERNAME");
+          this.carService.getUserCars(this.login.userName).subscribe(data => this.cars=data);
+        }
+        
     }
 
     public addCar(): void {
@@ -67,22 +92,33 @@ ngOnInit() {
       this.car.travelledKm=this.addCarForm.get("travelledKm").value
       this.car.avgFuelUse=this.addCarForm.get("avgFuelUse").value
       this.car.model=this.addCarForm.get("model").value
-      this.car.isInUse=false;
+      this.car.isInUse=true;
       this.carService.postCar(this.car).subscribe(car =>
         this.car);
       this.cars.push(this.car);
       this.visible=false;
       console.log(this.car);
+      
       }
 
-    public editCarFormMethod(): void {
-          
-      this.car.regNo=this.argument.regNo;
-      this.car.travelledKm=this.editCarForm.get("travelledKm").value
-      this.car.avgFuelUse=this.editCarForm.get("avgFuelUse").value
-      this.car.model=this.editCarForm.get("model").value
-      this.carService.putCar(this.car).subscribe(()=> {console.log("cao")});
+      public editCarFormMethod(): void {
+        
+        this.car.regNo=this.argument.regNo;
+        this.car.travelledKm=this.editCarForm.get("travelledKm").value;
+        this.car.avgFuelUse=this.editCarForm.get("avgFuelUse").value;
+        this.car.model=this.editCarForm.get("model").value;
+        this.car.isInUse=false;
+        console.log("THIS IS A CAR");
+        console.log(this.car);
+        this.carService.putCar(this.car).subscribe(data => this.car);
+        for(let i=0;i<this.cars.length;i++) {
+          if(this.cars[i].regNo==this.car.regNo) {
+            this.cars[i]=this.car;
+          }
         }
+        console.log(this.cars.length);
+        this.visible2=false;   
+      }
 
         public deleteCar(): void {
           console.log("CAR DELETED");
@@ -101,6 +137,11 @@ ngOnInit() {
 
     makeVisible(){
       this.visible=true;
+      for(let i=0;i<this.cars.length;i++) {
+        console.log("USAO OVDE U PETLJU");
+        console.log(this.cars[i]);
+        this.cars[i].isInUse=true;
+         }
     }
 
     closeVisible(){
@@ -110,6 +151,14 @@ ngOnInit() {
     makeVisible2(arg: any ){
       this.visible2=true;
       this.argument=arg;
+      this.editCarForm.setValue(
+        {
+          registration: arg.regNo,
+          travelledKm: arg.travelledKm,
+          avgFuelUse: arg.avgFuelUse,
+          model: arg.model
+        }
+      );
       console.log(this.argument.regNo + "ARGUMENT");
     }
 

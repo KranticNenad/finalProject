@@ -27,7 +27,11 @@ export class CarService {
   }
 
   putCar(car: Car): Observable<Car> {
-    return this.http.put<Car>('http://localhost:8080/finalProject/cars/', car);
+    return this.http.put<Car>('http://localhost:8080/finalProject/updateCar/', car);
+  }
+  
+  getUserCars(user: string): Observable<Car[]> {
+    return this.http.get<Car[]>('http://localhost:8080/finalProject/usercars/' + user );
   }
 
 }

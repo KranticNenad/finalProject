@@ -1,4 +1,4 @@
- 
+
 /* Top Bar
 --------------------------------------------------------------------------------------------------------------- */
 
@@ -637,7 +637,7 @@ height: 40px;
 /* RADIOBUTTONS */
 
 .radioButtons{
-  margin-top:28px;
+  margin-top:30px;
   text-align: left;
   padding:5px;
 }
@@ -648,22 +648,3 @@ height: 40px;
   
  
 }
-/* CARS FIELD INDICATOR */
-.warningCar{
-  background-color: #f2fd5a;
- 
-}
-
-.dangerCar{
-  background-color: #fd4b4b;
-}
-
-/* WARRANT MODAL DATALIST */
-.data-row input{
-  text-align: center;
-  padding:7px;
-  margin: 0 0 20px 0;
-  font-size:17px;
-  margin-left:20%;
-}
-
