@@ -26,10 +26,10 @@
 
 
 <b><a href="https://github.com/KranticNenad/finalProject/tree/master/FrontEnd/Angular">Angular</a></b>
- * <i></i>
- * <i></i>
- * <i></i>
- * <i></i>
+ * <i>Reactive Forms</i>
+ * <i>Bootstrap</i>
+ * <i>jsPDF</i>
+ * <i>httpClient</i>
  
  
 <b><a href="https://github.com/KranticNenad/finalProject/tree/master/BackEnd/Spring">Spring</a></b>
