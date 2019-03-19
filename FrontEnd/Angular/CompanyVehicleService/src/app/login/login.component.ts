@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
       else if(this.login.status=='false') {
         alert("INVALID PASSWORD");
       }
-    },1000);
+    },50);
     
   }
 }

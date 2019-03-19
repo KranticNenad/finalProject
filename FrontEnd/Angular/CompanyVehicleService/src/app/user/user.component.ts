@@ -36,7 +36,7 @@ export class UserComponent implements OnInit {
       else {
         console.log("NISTE ADMIN NE MOZETE DA VIDITE USERE!");
       }             
-    },2000);
+    },50);
   }
 
   addForm = new FormGroup({

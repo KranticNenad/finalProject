@@ -145,7 +145,7 @@ public show(arg:any): boolean {
         else {
           this.disabledv=false;
         }
-      },1500);
+      },50);
     }
 
     makeVisible(){

@@ -61,7 +61,7 @@ ngOnInit() {
       setTimeout(()=>{
             this.printData();             
       },
-      2000)
+    100)
 
   }
 
