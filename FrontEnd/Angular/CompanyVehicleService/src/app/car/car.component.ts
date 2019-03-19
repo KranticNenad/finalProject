@@ -21,6 +21,7 @@ export class CarComponent implements OnInit {
   searchVar: string='';
   disabledv = true;
   login: Login;
+  cars: Car[];
 
   public search(arg): void {
     this.searchVar=arg.target.value;
@@ -36,13 +37,6 @@ public show(arg:any): boolean {
 }
 }
 
-  car: Car = {
-    regNo: '',
-    travelledKm: 0,
-    avgFuelUse: 0,
-    isInUse: false,
-    model: ''
-}
   addCarForm = new FormGroup({
     registration: new FormControl(''),
     travelledKm: new FormControl(''),
@@ -54,11 +48,9 @@ public show(arg:any): boolean {
     registration: new FormControl(''),
     travelledKm: new FormControl(''),
     avgFuelUse: new FormControl(''),
-    model: new FormControl('')
+    model: new FormControl(''),
+    isInUse: new FormControl('')
   });
-
-    cars: Car[];
-
    public constructor(private carService: CarService,private checkService: CheckService) {}
 
 ngOnInit() {
@@ -104,32 +96,34 @@ ngOnInit() {
     }
 
     public addCar(): void {
-
-      console.log("CAR ADDED");
-      this.car.regNo=this.addCarForm.get("registration").value;
-      this.car.travelledKm=this.addCarForm.get("travelledKm").value
-      this.car.avgFuelUse=this.addCarForm.get("avgFuelUse").value
-      this.car.model=this.addCarForm.get("model").value
-      this.car.isInUse=false;
-      this.carService.postCar(this.car).subscribe(car =>
-        this.car);
-      this.cars.push(this.car);
+      let regNo = this.addCarForm.get('registration').value;
+      let travelledKm = this.addCarForm.get('travelledKm').value;
+      let avgFuelUser = this.addCarForm.get('avgFuelUse').value;
+      let model = this.addCarForm.get('model').value;
+      let isInUse = false;
+      
+      let carToAdd : Car = {regNo:regNo, travelledKm:travelledKm, avgFuelUse:avgFuelUser,model:model,isInUse:isInUse};
+      this.carService.postCar(carToAdd).subscribe(() => this.cars.push(carToAdd));
       this.visible=false;
-      console.log(this.car);
+      }
+
+      clickedOnCar(car:Car){
+        this.editCarForm.setValue({registration: car.regNo, travelledKm: car.travelledKm,
+        avgFuelUse: car.avgFuelUse, model: car.model, isInUse: car.isInUse});
       }
 
       public editCarFormMethod(): void {
+        let regNo = this.editCarForm.get('registration').value;
+        let travelledKm = this.editCarForm.get('travelledKm').value;
+        let avgFuelUse = this.editCarForm.get('avgFuelUse').value;
+        let model = this.editCarForm.get('model').value;
+        let isInUse = this.editCarForm.get('isInUse').value;
 
-        this.car.regNo=this.argument.regNo;
-        this.car.travelledKm=this.editCarForm.get("travelledKm").value;
-        this.car.avgFuelUse=this.editCarForm.get("avgFuelUse").value;
-        this.car.model=this.editCarForm.get("model").value;
-        this.car.isInUse=this.argument.isInUse;
-        console.log("THIS IS A CAR");
-        console.log(this.car);
-        this.carService.putCar(this.car).subscribe();
-        this.cars[this.cars.findIndex(Car => Car.regNo == this.car.regNo)] = this.car;
-        console.log(this.cars.length);
+        let carToEdit : Car = {regNo : regNo, travelledKm: travelledKm, avgFuelUse: avgFuelUse,
+        model:model, isInUse:isInUse};
+
+        this.carService.putCar(carToEdit).subscribe();
+        this.cars[this.cars.findIndex(Car => Car.regNo == carToEdit.regNo)] = carToEdit;
         this.visible2=false;   
       }
 
@@ -157,18 +151,8 @@ ngOnInit() {
       this.visible=false;
     }
 
-    makeVisible2(arg: any ){
+    makeVisible2(){
       this.visible2=true;
-      this.argument=arg;
-      this.editCarForm.setValue(
-        {
-          registration: arg.regNo,
-          travelledKm: arg.travelledKm,
-          avgFuelUse: arg.avgFuelUse,
-          model: arg.model
-        }
-      );
-      console.log(this.argument.regNo + "ARGUMENT");
     }
 
     closeVisible2(){

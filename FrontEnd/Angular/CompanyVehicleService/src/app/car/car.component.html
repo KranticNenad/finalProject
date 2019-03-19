@@ -44,7 +44,7 @@
               <td *ngIf="show(car)">
                 <p data-placement="top" data-toggle="tooltip" title="Edit" ><button
                     class="btn btn-primary btn-xs btnRight" data-title="Edit" data-toggle="modal"
-                    data-target="#edit" (click)="makeVisible2(car)"><span class="glyphicon glyphicon-pencil"
+                    data-target="#edit" (click)="makeVisible2()" (click)="clickedOnCar(car)"><span class="glyphicon glyphicon-pencil"
                       (click)="makeVisible2(car)"></span></button>
                 </p>
               </td>
@@ -138,6 +138,13 @@
           <p>Please Enter a Model</p>
         </div>
       </div>
+      <div class="col-md-4 mb-3">
+          <label for="validationServer02" hidden>isInUse</label>
+          <input type="text" hidden formControlName="isInUse" class="form-control" id="isInUse" placeholder="isInUse" required>
+          <div class="invalid-feedback" *ngIf="false">
+            <p>Please Enter isInUse</p>
+          </div>
+        </div>
     </div>    
 
     <button class="btn btn-success btnAddIn" (click)="editCarFormMethod()" >Edit</button>
