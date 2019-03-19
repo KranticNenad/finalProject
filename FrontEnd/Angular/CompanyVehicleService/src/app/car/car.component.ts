@@ -5,7 +5,8 @@ import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { CheckComponent } from '../check/check.component';
 import { Login } from '../login/login.interface';
 import { CheckService } from '../check.service';
-
+import * as jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 @Component({
   selector: 'app-car',
@@ -71,6 +72,22 @@ ngOnInit() {
       },
       2000)
 
+  }
+
+  saveAsPdf() {
+
+    var doc = new jsPDF('l', 'mm', 'a4');
+    let rows = [];
+
+    this.cars.forEach(car => {
+      rows.push([car.regNo, car.travelledKm, car.avgFuelUse, car.isInUse, car.model]);
+    });
+
+    doc.autoTable({
+      head:[["Registration","TravelledKm","AvgFuelUse","IsInUse","Model"]],
+      body:rows
+    });
+    doc.save("Cars.pdf");
   }
 
   public printData(): void {

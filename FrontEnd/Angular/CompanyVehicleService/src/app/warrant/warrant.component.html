@@ -3,7 +3,7 @@
     <!-- Trigger/Open The Modal -->
     <div class="left">
       <button class="btnAdd" (click)="makeVisible()" (click)="clickedOnAdd()">Add Warrant</button>
-      <button class=" btnAdd saveAsPdf" (click)="saveAsPdf()" *ngIf="false">PDF</button>
+      <button class=" btnAdd saveAsPdf" (click)="saveAsPdf()" *ngIf="true">PDF</button>
     </div>
     <!-- END Trigger/Open The Modal -->
 
@@ -189,6 +189,33 @@
     <div id="myModal4" class="modal2" *ngIf="visible2">    
       
       <div class="modal2-content">
+        <div class="form-row data-row">
+            <div class="col-md-6">
+                <!-- <label style="text-align: center;" for="validationServer03">Employee</label> -->
+                <input list="employees" formControlName="employee" name="employee" placeholder="Choose Employee..." required>
+                <datalist id="employees">
+              <option *ngFor="let employee of employees" value="{{employee.employeeId}}">{{employee.name + " " + employee.surname}}</option>
+                </datalist>
+                <!-- <input type="text" formControlName="car" class="form-control" id="validationServer03" placeholder="RegNo" required> -->
+                <div class="invalid-feedback" *ngIf="false">
+                  <p>Please Enter EmployeeId</p>
+                </div>
+              </div>    
+        
+        <div class="form-row data-row">
+            <div class="col-md-6">
+                <!-- <label for="validationServer03">Car</label> -->
+                <input list="cars" formControlName="car" name="car" placeholder="Choose Car Model..." required>
+                  <datalist id="cars">
+                    <option *ngFor="let car of cars" value="{{car.regNo}}">Model: {{car.model}} TravelledKM: {{car.travelledKm}}</option>
+                  </datalist>
+                <!-- <input type="text" formControlName="car" class="form-control" id="validationServer03" placeholder="RegNo" required> -->
+                <div class="invalid-feedback" *ngIf="false">
+                  <p>Please Enter Car RegNo</p>
+                </div>
+              </div>   
+              </div> 
+        </div>
         <div class="form-row">
           <div class="col-md-4 mb-3">
             <label for="validationServer01">WarrantId</label>
@@ -205,104 +232,82 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="validationServerUsername">Distance</label>
-            <div class="input-group">
-              <input type="text" formControlName="distance" class="form-control" id="validationServerUsername" placeholder="Distance"
-                aria-describedby="inputGroupPrepend3" required>
+            <label for="validationServerUsername">Distance</label>          
+              <input type="text" formControlName="distance" class="form-control" id="validationServerUsername" placeholder="Distance" required>
               <div class="invalid-feedback" *ngIf="false">
                 <p>Please choose Distance</p>
-              </div>
-            </div>
+              </div>            
           </div>
         </div>
         <div class="form-row">
-          <div class="col-md-4 mb-3">
-            <label for="validationServer03">ReturnedAt</label>
-            <input type="text" formControlName="returnedAt" class="form-control" id="validationServer03" placeholder="ReturnedAt" required>
-            <div class="invalid-feedback" *ngIf="false">
-              <p>Please Enter ReturnedAt</p>
-            </div>
-          </div>
+          
           <div class="col-md-4 mb-3">
             <label for="validationServer03">FuelUsed</label>
             <input type="text" formControlName="fuelUsed" class="form-control" id="validationServer03" placeholder="FuelUsed" required>
             <div class="invalid-feedback" *ngIf="false">
               <p>Please Enter FuelUsed</p>
             </div>
-          </div>
+          </div>       
           <div class="col-md-4 mb-3">
-            <label for="validationServer03">Car</label>
-            <input list="cars" formControlName="car" name="car" placeholder="Choose Car Model..." required>
-                <datalist id="cars">
-                  <option *ngFor="let car of cars" value="{{car.regNo}}">Model: {{car.model}} TravelledKM: {{car.travelledKm}}</option>
-                </datalist>
-            <div class="invalid-feedback" *ngIf="false">
-              <p>Please Enter Car</p>
-            </div>
-          </div>
+              <label for="validationServer">Distance</label>         
+                <input type="text" formControlName="distance" class="form-control" id="validationServer" placeholder="Distance"
+                  aria-describedby="inputGroupPrepend3" required>
+                <div class="invalid-feedback" *ngIf="false">
+                  <p>Please choose Distance</p>
+                </div>          
+            </div>        
           
-          <div class="col-md-6 mb-3">
-            <label for="validationServer03">Employee</label>
-            <input list="employees" formControlName="employee" name="employee" placeholder="Choose Employee..." required>
-            <datalist id="employees">
-          <option *ngFor="let employee of employees" value="{{employee.employeeId}}">{{employee.name + " " + employee.surname}}</option>
-            </datalist>
-            <div class="invalid-feedback" *ngIf="false">
-              <p>Please Enter Employee</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
+          <div class="col-md-4 mb-3">
             <label for="validationServer03">User</label>
-            <input disabled type="text" formControlName="user" class="form-control" id="validationServer03" placeholder="User" required>
+            <input disabled type="text" formControlName="user" class="form-control" id="validationServer03" placeholder="Username" required>
             <div class="invalid-feedback" *ngIf="false">
               <p>Please Enter User</p>
             </div>
           </div>   
     
         <div class="form-row">
-            <div class="col-md-3 mb-3">
-                <label for="validationServer03">Location 1</label>
+            <div class="col-md-6 mb-3">
+              
                 <input list="locations" formControlName="location1" name="location1" placeholder="Choose 1st location" required>
-                <datalist id="locations">
-                  <option *ngFor="let location of locations" value="{{location.locationCode}}">{{location.name}}</option>
-                </datalist>
+                  <datalist id="locations">
+                    <option *ngFor="let location of locations" value="{{location.locationCode}}">{{location.name}}</option>
+                  </datalist>
                 <div class="invalid-feedback" *ngIf="false">
                   <p>Please Enter Location 1</p>
                 </div>
               </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationServer03">Location 2</label>
+          <div class="col-md-6 mb-3">
+            
             <input list="locations" formControlName="location2" name="location2" placeholder="Choose 2nd location" required>
-                <datalist id="locations">
-                  <option *ngFor="let location of locations" value="{{location.locationCode}}">{{location.name}}</option>
-                </datalist>
+                  <datalist id="locations">
+                    <option *ngFor="let location of locations" value="{{location.locationCode}}">{{location.name}}</option>
+                  </datalist>
             <div class="invalid-feedback" *ngIf="false">
               <p>Please Enter Location 2</p>
             </div>
           </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationServer03">Location 3</label>
+          <div class="col-md-6 mb-3">
+         
             <input list="locations" formControlName="location3" name="location3" placeholder="Choose 3rd location" required>
-                <datalist id="locations">
-                  <option *ngFor="let location of locations" value="{{location.locationCode}}">{{location.name}}</option>
-                </datalist>
+                  <datalist id="locations">
+                    <option *ngFor="let location of locations" value="{{location.locationCode}}">{{location.name}}</option>
+                  </datalist>
             <div class="invalid-feedback" *ngIf="false">
               <p>Please Enter Location 3</p>
             </div>
           </div>
-          <div class="col-md-3 mb-3">
-            <label for="validationServer03">Location 4</label>
+          <div class="col-md-6 mb-3">
+           
             <input list="locations" formControlName="location4" name="location4" placeholder="Choose 4th location" required>
-                <datalist id="locations">
-                  <option *ngFor="let location of locations" value="{{location.locationCode}}">{{location.name}}</option>
-                </datalist>
+                  <datalist id="locations">
+                    <option *ngFor="let location of locations" value="{{location.locationCode}}">{{location.name}}</option>
+                  </datalist>
             <div class="invalid-feedback" *ngIf="false">
               <p>Please Enter Location 4</p>
             </div>
           </div>
         </div>
-
-        
+    
         </div>
         <button class="btn btn-success btnAddIn" (click)="editWarrant()">Edit</button>
         <button class="btn btn-danger btnCancel" (click)="closeVisible2()">Cancel</button>
