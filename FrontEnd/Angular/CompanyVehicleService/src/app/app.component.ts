@@ -25,6 +25,8 @@ export class AppComponent implements OnInit {
     setTimeout(()=> {
       if(this.login.status=='true') {
         this.visible=true;
+        this.name=this.login.userName;
+
       }
       else {
         this.visible=false;

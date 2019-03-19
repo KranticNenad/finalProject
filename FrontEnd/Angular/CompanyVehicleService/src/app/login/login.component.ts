@@ -44,7 +44,10 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/car']);
           this.checkService.getArgument(this.login);
       }
-    },5000);
+      else if(this.login.status=='false') {
+        alert("INVALID PASSWORD");
+      }
+    },1000);
     
   }
 }
