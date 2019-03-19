@@ -231,6 +231,7 @@ deleteWarrant(){
 
 
   makeVisible(){
+    this.addForm.setValue({distance:'',fuelUsed:'',car:'',employee:'',user:'',location1:'',location2:'',location3:'',location4:''});
     this.visible=true;
   }
 

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarService } from './car.service';
 import { Car } from './car.interface';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
-import { CheckComponent } from '../check/check.component';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms'
 import { Login } from '../login/login.interface';
 import { CheckService } from '../check.service';
 import * as jsPDF from 'jspdf';
@@ -125,15 +124,11 @@ ngOnInit() {
         this.car.travelledKm=this.editCarForm.get("travelledKm").value;
         this.car.avgFuelUse=this.editCarForm.get("avgFuelUse").value;
         this.car.model=this.editCarForm.get("model").value;
-        this.car.isInUse=false;
+        this.car.isInUse=this.argument.isInUse;
         console.log("THIS IS A CAR");
         console.log(this.car);
-        this.carService.putCar(this.car).subscribe(data => this.car);
-        for(let i=0;i<this.cars.length;i++) {
-          if(this.cars[i].regNo==this.car.regNo) {
-            this.cars[i]=this.car;
-          }
-        }
+        this.carService.putCar(this.car).subscribe();
+        this.cars[this.cars.findIndex(Car => Car.regNo == this.car.regNo)] = this.car;
         console.log(this.cars.length);
         this.visible2=false;   
       }
@@ -155,11 +150,7 @@ ngOnInit() {
 
     makeVisible(){
       this.visible=true;
-      for(let i=0;i<this.cars.length;i++) {
-        console.log("USAO OVDE U PETLJU");
-        console.log(this.cars[i]);
-        this.cars[i].isInUse=true;
-         }
+      this.addCarForm.setValue({registration:'',travelledKm:'',avgFuelUse:'',model:''});
     }
 
     closeVisible(){

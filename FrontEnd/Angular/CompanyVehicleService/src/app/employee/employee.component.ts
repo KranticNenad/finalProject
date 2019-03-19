@@ -149,6 +149,7 @@ public show(arg:any): boolean {
     }
 
     makeVisible(){
+      this.addForm.setValue({employeeId:'', name:'', surname:'', dob:'',salary:''});
       this.visible=true;
     }
 

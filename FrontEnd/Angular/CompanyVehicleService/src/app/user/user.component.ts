@@ -6,7 +6,6 @@ import * as jsPDF from 'jspdf';
 import 'jspdf-autotable';
 import { CheckService } from '../check.service';
 import { Login } from '../login/login.interface';
-import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-user',
@@ -115,6 +114,7 @@ export class UserComponent implements OnInit {
 
 
   makeVisible(){
+    this.addForm.setValue({username:'', password:'', enabled:'', authority:'',email:''});
     this.visible=true;
   }
 
